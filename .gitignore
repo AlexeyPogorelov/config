@@ -1,0 +1,11 @@
+/*
+!/.gitignore
+!/vifm
+!/mc
+!/htop
+!/i3
+!/nvim/init.vim
+!/tmux/.tmux.conf
+!/lazygit
+!/README.md
+

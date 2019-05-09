@@ -1,0 +1,271 @@
+# You can edit this file by hand, but it's recommended not to do that.
+
+# Marks:
+'H
+	/home/alex/
+	..
+1556215317
+'b
+	/home/alex/bin/
+	..
+1556215317
+'h
+	/home/alex/
+	..
+1556215317
+
+# Bookmarks:
+
+# TUI:
+ar
+q0
+v2
+ov
+m-1
+l2
+r2
+
+# Left window history (oldest to newest):
+d/home/alex/projects/app-x
+	src
+4
+d/home/alex/projects/app-x/src
+	styles
+10
+d/home/alex
+	Downloads
+3
+d/home/alex/Downloads
+	MasterClass - Armin Van Buuren Teaches Dance Music
+3
+d/home/alex/Downloads/MasterClass - Armin Van Buuren Teaches Dance Music
+	Armin van Buuren Masterclass - 11 - In the Studio, Part 4 - Adding Groove and Bass.mp4
+12
+d/home/alex/Downloads
+	MasterClass - Armin Van Buuren Teaches Dance Music
+3
+d/home/alex/Downloads/MasterClass - Armin Van Buuren Teaches Dance Music
+	..
+0
+d/home/alex/Downloads
+	MasterClass - Usher Teaches the Art of Performance
+4
+d/home/alex/Downloads/MasterClass - Usher Teaches the Art of Performance
+	00 - Class_Workbook.pdf
+1
+d/home/alex/Downloads
+	MasterClass - Usher Teaches the Art of Performance
+4
+d/home/alex
+	Pictures
+5
+d/home/alex/Pictures
+	Wallpapers
+1
+d/home/alex/Pictures/Wallpapers
+	render 1.png
+1
+d/home/alex/Pictures
+	Wallpapers
+1
+d/home/alex
+	test
+16
+d/home/alex/test
+	plugins
+7
+d/home/alex/projects/hw
+	bitbucket.pub
+11
+d/home/alex/projects
+	hw
+3
+d/home/alex
+	Downloads
+3
+d/home/alex/Downloads
+	Hubstaff-1.4.4-556fe980.sh
+13
+d/home/alex
+	Downloads
+3
+d/home
+	alex
+1
+d/home/alex
+	Downloads
+3
+d/home
+	alex
+1
+d/
+	home
+5
+d/home
+	alex
+1
+d/home/alex
+	..
+0
+d/home
+	alex
+1
+d/
+	home
+5
+d/home
+	alex
+1
+d/home/alex
+	.tmux.conf
+33
+d
+
+# Right window history (oldest to newest):
+D/home/alex/projects/app-x
+	src
+4
+D/home/alex/projects/app-x/src
+	api
+1
+D/home/alex/projects/app-x/src/api
+	queries.js
+2
+D/home/alex/projects/app-x/src
+	api
+1
+D/home/alex/projects/app-x/src/api
+	queries.js
+2
+D/home/alex/projects/app-x/src
+	constants
+4
+D/home/alex/projects/app-x/src/constants
+	..
+0
+D/home/alex/projects/app-x/src
+	api
+1
+D/home/alex/projects/app-x
+	node_modules
+2
+D/home/alex/projects
+	app-x
+1
+D/home/alex
+	Downloads
+3
+D/home/alex/Downloads
+	reaper5973_linux_x86_64
+8
+D/home/alex
+	Pictures
+5
+D/home/alex/Pictures
+	Screenshot from 2019-04-07 10-20-36.png
+3
+D/home/alex
+	PlayOnLinux's virtual drives
+6
+D/home/alex/PlayOnLinux's virtual drives
+	default
+1
+D/home/alex/PlayOnLinux's virtual drives/default
+	..
+0
+D/home/alex/PlayOnLinux's virtual drives
+	default
+1
+D/home/alex
+	PlayOnLinux's virtual drives
+6
+D/etc
+	vdpau_wrapper.cfg
+29
+D/
+	home
+5
+D/home
+	alex
+1
+D/home/alex
+	.config
+5
+D/home/alex/.config
+	gtk-3.0
+20
+D/home/alex
+	Music
+24
+D/home/alex/Music
+	..
+0
+D/home/alex
+	Pictures
+25
+D/home/alex/Pictures
+	Screenshot from 2019-04-07 10-20-36.png
+3
+D/home/alex
+	.config
+5
+D/home/alex/.config
+	tmux
+23
+D/home/alex/.config/tmux
+	..
+0
+D/home/alex/.config
+	tmux
+23
+D
+
+# Command line history (oldest to newest):
+:zz
+:!sh Hubstaff-1.4.4-556fe980.sh
+:help
+:mkdir tmux
+:touch 
+:q
+
+# Search history (oldest to newest):
+
+# Prompt history (oldest to newest):
+
+# Local filter history (oldest to newest):
+
+# Registers:
+""/home/alex/.tmux.conf
+
+# Directory stack (oldest to newest):
+
+# Trash content:
+t/home/alex/.local/share/vifm/Trash/000_hedgewiz-bane
+	/home/alex/projects/hedgewiz/hedgewiz-bane
+t/home/alex/.local/share/vifm/Trash/000_hedgewiz-goblin
+	/home/alex/projects/hedgewiz/hedgewiz-goblin
+t/home/alex/.local/share/vifm/Trash/000_hedgewiz-loki
+	/home/alex/projects/hedgewiz/hedgewiz-loki
+t/home/alex/.local/share/vifm/Trash/000_hedgewiz-react-starter
+	/home/alex/projects/hedgewiz/hedgewiz-react-starter
+t/home/alex/.local/share/vifm/Trash/000_hedgewiz-server
+	/home/alex/projects/hedgewiz/hedgewiz-server
+t/home/alex/.local/share/vifm/Trash/000_hedgewiz-ui
+	/home/alex/projects/hedgewiz/hedgewiz-ui
+t/home/alex/.local/share/vifm/Trash/000_hedgewiz-vader
+	/home/alex/projects/hedgewiz/hedgewiz-vader
+t/home/alex/.local/share/vifm/Trash/000_hedgewiz-zod
+	/home/alex/projects/hedgewiz/hedgewiz-zod
+t/home/alex/.local/share/vifm/Trash/000_hedgewiz
+	/home/alex/projects/hedgewiz
+
+# State:
+f
+i1
+[.0
+[F
+F
+I1
+].0
+]F
+s0
