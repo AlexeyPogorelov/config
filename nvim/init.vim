@@ -66,6 +66,9 @@ let g:ctrlp_custom_ignore = {
   \ 'link': 'some_bad_symbolic_links',
   \ }
 
+"Netrw options
+let g:netrw_banner=0
+
 "Airline options
 let g:airline_powerline_fonts=1
 let g:airline_theme='one'
