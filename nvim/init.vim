@@ -84,6 +84,7 @@ let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+let g:airline#extensions#tabline#show_buffers = 0
 
 " Neomake
 "autocmd! BufWritePost * Neomake
