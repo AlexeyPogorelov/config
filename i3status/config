@@ -13,65 +13,78 @@ general {
 # order += "ethernet eth0"
 # order += "cpu_temperature 0"
 # order += "load"
+order += "volume master"
+order += "cpu_usage"
 order += "tztime local"
 order += "battery 0"
 
+volume master {
+  format = "♪: %volume" 
+	device = "default"
+	mixer = "Master"
+	mixer_idx = 0
+}
+
 wireless wlan0 {
-        format_up = "W: (%quality at %essid, %bitrate) %ip"
-        format_down = "W: down"
+  format_up = "W: (%quality at %essid, %bitrate) %ip"
+  format_down = "W: down"
 }
 
 ethernet eth0 {
-        # if you use %speed, i3status requires the cap_net_admin capability
-        format_up = "E: %ip (%speed)"
-        format_down = "E: down"
+  # if you use %speed, i3status requires the cap_net_admin capability
+  format_up = "E: %ip (%speed)"
+  format_down = "E: down"
 }
 
 battery 0 {
-        # format = "%status %percentage %remaining %emptytime"
-        format = "%percentage %status"
-        format_down = "No battery"
-        status_chr = "⚡"
-        status_bat = ""
-        status_unk = "?"
-        status_full = "🔋 FULL"
-        path = "/sys/class/power_supply/BAT1/uevent"
-        low_threshold = 10
+  # format = "%status %percentage %remaining %emptytime"
+  format = "%percentage %status"
+  format_down = "No battery"
+  status_chr = ""
+  status_bat = ""
+  status_unk = "?"
+  status_full = ""
+  path = "/sys/class/power_supply/BAT1/uevent"
+  low_threshold = 10
+}
+
+cpu_usage {
+	format = " %usage"
 }
 
 run_watch DHCP {
-        pidfile = "/var/run/dhclient*.pid"
+  pidfile = "/var/run/dhclient*.pid"
 }
 
 run_watch VPNC {
-        # file containing the PID of a vpnc process
-        pidfile = "/var/run/vpnc/pid"
+  # file containing the PID of a vpnc process
+  pidfile = "/var/run/vpnc/pid"
 }
 
 path_exists VPN {
-        # path exists when a VPN tunnel launched by nmcli/nm-applet is active
-        path = "/proc/sys/net/ipv4/conf/tun0"
+  # path exists when a VPN tunnel launched by nmcli/nm-applet is active
+  path = "/proc/sys/net/ipv4/conf/tun0"
 }
 
 tztime local {
-        format = "%m-%d %H:%M"
+  format = "%m-%d %H:%M"
 }
 
 tztime berlin {
-        format = "%Y-%m-%d %H:%M:%S %Z"
-        timezone = "Europe/Berlin"
+  format = "%Y-%m-%d %H:%M:%S %Z"
+  timezone = "Europe/Berlin"
 }
 
 load {
-        format = "%1min"
+  format = "%1min"
 }
 
 cpu_temperature 0 {
-        format = "T: %degrees °C"
-        path = "/sys/devices/platform/coretemp.0/temp1_input"
+  format = "T: %degrees °C"
+  path = "/sys/devices/platform/coretemp.0/temp1_input"
 }
 
 disk "/" {
-        format = "%free"
+  format = "%free"
 }
 
