@@ -131,6 +131,7 @@ assign [class="Chromium-browser"] $workspace2
 assign [class="Code"] $workspace3
 assign [class="Sublime_text"] $workspace3
 assign [class="Slack"] $workspace4
+assign [class="Skype"] $workspace4
 assign [class="Pulseeffects"] $workspace10
 
 # reload the configuration file
@@ -235,9 +236,14 @@ bindsym --release Control+Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mk
 # area selection screenshots
 bindsym --release Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`'
 
+# connect my JBL Speaker
+#bindsym --release $mod+z exec echo -e 'agent on\ndisconnect 00:42:79:B5:9B:A8'|bluetoothctl|pulseeffects --gapplication-service
+#bindsym --release $mod+x exec echo -e 'agent on\nconnect 00:42:79:B5:9B:A8'|bluetoothctl|pulseeffects -q
+exec echo -e 'agent on\nconnect 00:42:79:B5:9B:A8'|bluetoothctl
+
 # autorun
 exec "gnome-terminal"
 exec "chromium-browser"
-exec "pulseeffects"
+exec "pulseeffects --gapplication-service"
 exec "code"
 
