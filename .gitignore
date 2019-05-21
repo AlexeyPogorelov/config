@@ -1,11 +1,14 @@
 /*
 !/.gitignore
+!/*.sh
 !/vifm/vifmrc
 !/mc
 !/htop
+!/PulseEffects
 !/PulseEffects/output/*
+!/i3
 !/i3/config
-!/i3/*.sh
+!/i3status
 !/i3status/config
 !/nvim/init.vim
 !/tmux/.tmux.conf

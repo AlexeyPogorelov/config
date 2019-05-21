@@ -241,9 +241,13 @@ bindsym --release Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -
 #bindsym --release $mod+x exec echo -e 'agent on\nconnect 00:42:79:B5:9B:A8'|bluetoothctl|pulseeffects -q
 exec echo -e 'agent on\nconnect 00:42:79:B5:9B:A8'|bluetoothctl
 
+# fix touchpad by shortcut
+bindsym --release $mod+z exec "sh ~/.config/resetTouchpad.sh"
+
 # autorun
 exec "gnome-terminal"
 exec "chromium-browser"
 exec "pulseeffects --gapplication-service"
-exec "code"
+exec_always compton -f
+#exec "sudo watch -n 80 sh ~/.config/resetTouchpad.sh"
 
