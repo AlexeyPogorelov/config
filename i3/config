@@ -249,5 +249,7 @@ exec "gnome-terminal"
 exec "chromium-browser"
 exec "pulseeffects --gapplication-service"
 exec_always compton -f
+exec_always feh --bg-fill ~/Pictures/bg.png
+
 #exec "sudo watch -n 80 sh ~/.config/resetTouchpad.sh"
 
