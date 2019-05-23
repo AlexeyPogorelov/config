@@ -182,9 +182,6 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-# screen scale
-exec "xrandr --dpi 196"
-
 # colors
 set $base00 #101218
 set $base01 #1f222d
