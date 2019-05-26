@@ -2,6 +2,7 @@
 !/.xinitrc
 !/.Xresources
 !/.gitignore
+!/cheatsheet.md
 !/*.sh
 !/vifm/vifmrc
 !/mc
