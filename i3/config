@@ -133,6 +133,7 @@ assign [class="Code"] $workspace3
 assign [class="Sublime_text"] $workspace3
 assign [class="Slack"] $workspace4
 assign [class="Skype"] $workspace4
+assign [class="Thunderbird"] $workspace4
 assign [class="Pulseeffects"] $workspace10
 assign [class="Upwork"] $workspace10
 
@@ -244,7 +245,7 @@ exec echo -e 'agent on\nconnect 00:42:79:B5:9B:A8'|bluetoothctl
 bindsym --release $mod+z exec "sh ~/.config/resetTouchpad.sh"
 
 # autorun
-exec "gnome-terminal -e tmux"
+exec "gnome-terminal"
 exec "chromium-browser"
 exec "pulseeffects --gapplication-service"
 exec_always compton --config ~/.config/compton.conf
