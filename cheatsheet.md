@@ -9,3 +9,7 @@ load from file `xrdb ~/.Xresources`
 ### great htop alternative
 `glances`
 
+### check network speed
+check speed `speedtest-cli`
+monitor speed `speedometer -r wlp2s0`
+

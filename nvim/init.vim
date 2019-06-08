@@ -53,6 +53,7 @@ Plug 'rakr/vim-one'
 Plug 'jiangmiao/auto-pairs'
 Plug 'heavenshell/vim-jsdoc'
 Plug 'pangloss/vim-javascript'
+Plug 'vifm/vifm.vim'
 call plug#end()
 
 colorscheme gruvbox
