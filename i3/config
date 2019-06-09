@@ -96,11 +96,11 @@ set $workspace1 "1 "
 set $workspace2 "2 "
 set $workspace3 "3 "
 set $workspace4 "4 "
-set $workspace5 "5"
-set $workspace6 "6"
+set $workspace5 "5 "
+set $workspace6 "6 "
 set $workspace7 "7"
 set $workspace8 "8"
-set $workspace9 "9"
+set $workspace9 "9 "
 set $workspace10 "10 "
 
 # switch to workspace
@@ -134,6 +134,9 @@ assign [class="Sublime_text"] $workspace3
 assign [class="Slack"] $workspace4
 assign [class="Skype"] $workspace4
 assign [class="Thunderbird"] $workspace4
+assign [class="Nautilus"] $workspace5
+assign [class="Gimp"] $workspace6
+assign [class="REAPER"] $workspace9
 assign [class="Pulseeffects"] $workspace10
 assign [class="Upwork"] $workspace10
 
@@ -237,12 +240,13 @@ bindsym --release Control+Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mk
 bindsym --release Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`'
 
 # connect my JBL Speaker
-#bindsym --release $mod+z exec echo -e 'agent on\ndisconnect 00:42:79:B5:9B:A8'|bluetoothctl|pulseeffects --gapplication-service
-#bindsym --release $mod+x exec echo -e 'agent on\nconnect 00:42:79:B5:9B:A8'|bluetoothctl|pulseeffects -q
-exec echo -e 'agent on\nconnect 00:42:79:B5:9B:A8'|bluetoothctl
+# bindsym --release $mod+z exec echo -e 'agent on\ndisconnect 00:42:79:B5:9B:A8'|bluetoothctl|pulseeffects --gapplication-service
+# bindsym --release $mod+x exec echo -e 'agent on\nconnect 00:42:79:B5:9B:A8'|bluetoothctl|pulseeffects -q
+# exec echo -e 'agent on\nconnect 00:42:79:B5:9B:A8'|bluetoothctl
 
 # fix touchpad by shortcut
 bindsym --release $mod+z exec "sh ~/.config/resetTouchpad.sh"
+#exec "sudo watch -n 80 sh ~/.config/resetTouchpad.sh"
 
 # autorun
 exec "gnome-terminal"
@@ -250,6 +254,3 @@ exec "chromium-browser"
 exec "pulseeffects --gapplication-service"
 exec_always compton --config ~/.config/compton.conf
 exec_always feh --bg-fill ~/Pictures/bg.png
-
-#exec "sudo watch -n 80 sh ~/.config/resetTouchpad.sh"
-
