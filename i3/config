@@ -137,7 +137,10 @@ assign [class="Thunderbird"] $workspace4
 assign [class="Nautilus"] $workspace5
 assign [class="Gimp"] $workspace6
 assign [class="REAPER"] $workspace9
+assign [class="reason.exe"] $workspace9
 assign [class="Pulseeffects"] $workspace10
+assign [class="qjackctl"] $workspace10
+assign [class="Jack-rack"] $workspace10
 assign [class="Upwork"] $workspace10
 
 # reload the configuration file
@@ -248,10 +251,14 @@ bindsym --release Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -
 bindsym --release $mod+z exec "sh ~/.config/resetTouchpad.sh"
 #exec "sudo watch -n 80 sh ~/.config/resetTouchpad.sh"
 
-# autorun
-exec "gnome-terminal"
-exec "chromium-browser"
-exec "pulseeffects --gapplication-service"
-exec "nautilus"
+# background image
 exec_always compton --config ~/.config/compton.conf
 exec_always feh --bg-fill ~/Pictures/bg.png
+
+# autorun
+exec "gnome-terminal"
+# exec "chromium-browser"
+# exec "pulseeffects --gapplication-service"
+# exec "nautilus"
+# exec "qjackctl"
+# exec "jack-rack ~/.config/jack-rack/surface"
