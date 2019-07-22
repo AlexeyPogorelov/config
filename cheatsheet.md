@@ -1,3 +1,9 @@
+### get help
+`curl cheat.sh`
+
+### get weather
+`curl wttr.in`
+
 ### tmux change root folder
 `Ctrl`+`b` `:`
 `attach -c ~/projects`
@@ -12,4 +18,7 @@ load from file `xrdb ~/.Xresources`
 ### check network speed
 check speed `speedtest-cli`
 monitor speed `speedometer -r wlp2s0`
+
+### convert video
+convert to VP9 `ffmpeg -i input.mp4 -vf scale=1280:720 -c:v libvpx-vp9 -b:v 600K -b:a 128k -ac 1 -c:a libopus -cpu-used 0 -threads 8 output.webm`
 

@@ -25,9 +25,12 @@ set showmatch  " show matching braces
 " make backspace behave in a sane manner
 set backspace=indent,eol,start
 
-set noerrorbells                " No beeps
+" set undodir=~/temp/.vim/.undo//
+" set backupdir=~/temp/.vim/.backup//
+" set directory=~/temp/.vim/.swp//
 set noswapfile                  " Don't use swapfile
 set nobackup                    " Don't create annoying backup files
+set noerrorbells                " No beeps
 set splitright                  " Split vertical windows right to the current windows
 set splitbelow                  " Split horizontal windows below to the current windows
 set fileformats=unix,dos,mac    " Prefer Unix over Windows over OS 9 formats
