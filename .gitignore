@@ -5,6 +5,7 @@
 !/cheatsheet.md
 !/*.sh
 !/vifm/vifmrc
+!/vifm/colors/Gruvbox.vifm
 !/mc
 !/htop
 !/PulseEffects
