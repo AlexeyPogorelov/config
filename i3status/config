@@ -15,11 +15,11 @@ general {
 # order += "ethernet eth0"
 # order += "load"
 # order += "cpu_usage"
+# order += "tztime local"
 
 order += "wireless wlp2s0"
 order += "volume master"
 order += "cpu_temperature 0"
-# order += "tztime local"
 order += "battery 0"
 
 volume master {
@@ -30,8 +30,8 @@ volume master {
 }
 
 wireless wlp2s0 {
-  format_up = ": (%quality at %essid, %bitrate) %ip"
-  format_down = ": down"
+  format_up = ": %essid%quality %ip"
+  format_down = ": "
 }
 
 ethernet eth0 {
