@@ -9,18 +9,19 @@ set termguicolors
 
 set tabstop=2
 set shiftwidth=2
-set expandtab
+set scrolloff=4                 " keep 4 lines off the edges of the screen when scrolling
+set expandtab                   " splits tab to spaces
 set autoindent
-set number relativenumber " show numbers
-set list " show whitespaces
+set number relativenumber       " show numbers
+set list                        " show whitespaces
 set listchars=tab:>\ ,trail:~,extends:>,precedes:<,space:·
 
 " Searching
-set ignorecase " case insensitive searching
-set smartcase  " case-sensitive if expresson contains a capital letter
+set ignorecase                  " case insensitive searching
+set smartcase                   " case-sensitive if expresson contains a capital letter
 set hlsearch
-set incsearch  " set incremental search, like modern browsers
-set showmatch  " show matching braces
+set incsearch                   " set incremental search, like modern browsers
+set showmatch                   " show matching braces
 
 " make backspace behave in a sane manner
 set backspace=indent,eol,start
@@ -30,6 +31,7 @@ set backspace=indent,eol,start
 " set directory=~/temp/.vim/.swp//
 set noswapfile                  " Don't use swapfile
 set nobackup                    " Don't create annoying backup files
+
 set noerrorbells                " No beeps
 set splitright                  " Split vertical windows right to the current windows
 set splitbelow                  " Split horizontal windows below to the current windows
@@ -38,6 +40,9 @@ set wildmenu                    " enhanced command line completion
 set hidden                      " current buffer can be put into background
 set cmdheight=1                 " command bar height
 set nocompatible                " not compatible with vi
+
+set history=1000                " remember more commands and search history
+set undolevels=1000             " use many muchos levels of undo
 
 call plug#begin('~/.vim/plugged')
 Plug 'neomake/neomake'
@@ -97,6 +102,8 @@ set updatetime=100
 
 "key bindings
 tnoremap <ESC><ESC> <C-\><C-N>
+noremap <F3> :set list!<CR>
+noremap <F4> :set relativenumber!<CR>
 
 "pangloss/vim-javascript config
 let g:javascript_plugin_jsdoc = 1
