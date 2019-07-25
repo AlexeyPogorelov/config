@@ -61,10 +61,18 @@ Plug 'rakr/vim-one'
 Plug 'jiangmiao/auto-pairs'
 Plug 'heavenshell/vim-jsdoc'
 Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'mattn/emmet-vim'
+Plug 'jwalton512/vim-blade'
 call plug#end()
 
 colorscheme gruvbox
 set background=dark
+
+" Emmet options
+let g:user_emmet_leader_key=','
+let g:user_emmet_install_global = 0
+autocmd FileType scss,sass,css EmmetInstall
 
 " ctrlp options
 let g:ctrlp_working_path_mode = 'ra'
@@ -104,6 +112,7 @@ set updatetime=100
 tnoremap <ESC><ESC> <C-\><C-N>
 noremap <F3> :set list!<CR>
 noremap <F4> :set relativenumber!<CR>
+command! E Explore
 
 "pangloss/vim-javascript config
 let g:javascript_plugin_jsdoc = 1

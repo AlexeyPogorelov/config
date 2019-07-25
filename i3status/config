@@ -15,11 +15,11 @@ general {
 # order += "ethernet eth0"
 # order += "load"
 # order += "cpu_usage"
-# order += "tztime local"
 
 order += "wireless wlp2s0"
 order += "volume master"
 order += "cpu_temperature 0"
+order += "tztime local"
 order += "battery 0"
 
 volume master {
@@ -78,7 +78,8 @@ path_exists VPN {
 }
 
 tztime local {
-  format = "%m-%d %H:%M"
+  # format = "%m-%d %H:%M"
+  format = "%H:%M"
 }
 
 tztime berlin {

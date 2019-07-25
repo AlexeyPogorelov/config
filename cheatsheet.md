@@ -22,3 +22,8 @@ monitor speed `speedometer -r wlp2s0`
 ### convert video
 convert to VP9 `ffmpeg -i input.mp4 -vf scale=1280:720 -c:v libvpx-vp9 -b:v 600K -b:a 128k -ac 1 -c:a libopus -cpu-used 0 -threads 8 output.webm`
 
+### compress images
+png `optipng -preserve -o 6 -dir compressed/ -o7 -zm1-9 *.png`
+jpeg `jpegoptim -d ./compressed/ -m 80 -T 10% -P *.jpg`
+svg `cp *.svg compressed/ && svgo -r compressed/ -p 2 --multipass`
+
