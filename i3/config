@@ -42,10 +42,8 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
-bindsym $mod+Right focus right
 
 # move focused window
 bindsym $mod+Shift+h move left
@@ -169,6 +167,11 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+bindsym $mod+Left workspace prev
+bindsym $mod+Right workspace next
+bindsym $mod+p workspace prev
+bindsym $mod+n workspace next
+
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
@@ -228,11 +231,11 @@ set $magenta1 #b16286
 set $magenta2 #d3869b
 
 # Widow Colours
-# class                 border|backgr|text|indicator|child_border
-client.focused          $bg2 $bg2 $text2 $bg2 $bg2
-client.focused_inactive $bg0 $bg0 $text0 $bg0 $bg0
-client.unfocused        $bg0 $bg0 $bg2 $bg0 $bg0
-client.urgent           $red1 $red1 $white $red1 $red1
+# class                  border | backgr | text   | indicator | child_border
+client.focused           $bg2     $bg2     $text2   $bg2        $bg2
+client.focused_inactive  $bg0     $bg0     $text0   $bg0        $bg0
+client.unfocused         $bg0     $bg0     $bg2     $bg0        $bg0
+client.urgent            $red1    $red1    $white   $red1       $red1
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -247,10 +250,10 @@ bar {
     statusline $text0
 
     # workspaces section
-    #                    border  backgr. text
-    focused_workspace $text0 $text1 $bg0
-    active_workspace $bg2 $bg2 $white
-    inactive_workspace $bg0 $bg0 $text0
-    urgent_workspace $red1 $red2 $white
+    # class             border | background | text
+    focused_workspace   $text0   $text1       $bg0
+    active_workspace    $bg2     $bg2         $white
+    inactive_workspace  $bg0     $bg0         $text0
+    urgent_workspace    $red1    $red2        $white
   }
 }
