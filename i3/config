@@ -190,6 +190,9 @@ bindsym --release Control+Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mk
 # area selection screenshots
 bindsym --release Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`'
 
+# lock screen
+bindsym --release $mod+x exec --no-startup-id gnome-terminal --full-screen -e cmatrix
+
 # fix touchpad by shortcut
 bindsym --release $mod+z exec "sh ~/.config/resetTouchpad.sh"
 #exec "sudo watch -n 80 sh ~/.config/resetTouchpad.sh"
@@ -204,7 +207,6 @@ exec --no-startup-id "sleep 10; setxkbmap -option 'grp:alt_space_toggle'"
 
 # autorun
 exec "gnome-terminal -e tmux"
-exec --no-startup-id i3-msg 'workspace $workspace10; exec gnome-terminal --full-screen -e cmatrix; workspace $workspace1;'
 
 # THEME
 set $bg0 #1d2021
