@@ -3,6 +3,7 @@
 !/.Xresources
 !/.gitignore
 !/cheatsheet.md
+!/compton.conf
 !/*.sh
 !/vifm/vifmrc
 !/vifm/colors/Gruvbox.vifm
