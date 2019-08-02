@@ -25,6 +25,9 @@ set default audio output `echo 'set-default-source bluez_sink.00_42_79_B5_9B_A8.
 ### get weather
 `curl wttr.in`
 
+### generate QR code
+`curl qrenco.de/this`
+
 ### tmux change root folder
 `Ctrl`+`b` `:`
 `attach -c ~/projects`

@@ -127,7 +127,6 @@ assign [class="Skype"] $workspace4
 assign [class="Thunderbird"] $workspace4
 assign [class="Nautilus"] $workspace5
 assign [class="Gimp"] $workspace6
-assign [class="REAPER"] $workspace8
 assign [class="reason.exe"] $workspace8
 assign [class="Pulseeffects"] $workspace9
 assign [class="qjackctl"] $workspace9
