@@ -4,7 +4,7 @@
 !/.gitignore
 !/cheatsheet.md
 !/compton.conf
-!/*.sh
+!/sh/*.sh
 !/vifm/vifmrc
 !/vifm/colors/Gruvbox.vifm
 !/mc

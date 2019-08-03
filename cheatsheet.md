@@ -22,6 +22,12 @@ move workspace to external display `i3 move workspace to left`
 get list of available outputs `pacmd list-sources | grep -e device.string -e 'name:'`
 set default audio output `echo 'set-default-source bluez_sink.00_42_79_B5_9B_A8.a2dp_sink.monitor' | pacmd`
 
+### Get folders sizes
+`du -h --max-depth=1 | sort -hr`
+
+### share file
+`curl --upload-file [file] https://transfer.sh/[name]`
+
 ### get weather
 `curl wttr.in`
 
