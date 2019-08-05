@@ -51,6 +51,7 @@ monitor speed `speedometer -r wlp2s0`
 
 ### convert video
 convert to VP9 `ffmpeg -i input.mp4 -vf scale=1280:720 -c:v libvpx-vp9 -b:v 600K -b:a 128k -ac 1 -c:a libopus -cpu-used 0 -threads 8 output.webm`
+apply 3dlut to video `ffmpeg -i input -vf lut3d="file=<apsolute file path>" -c:a copy -threads 1 -s 1280x720 output`
 
 ### compress images
 png lossy `cp *.png ./compressed/ && find ./compressed -iname "*.png" -exec pngquant --quality=35-80 --skip-if-larger -s1 --ext=.png --force {} +`
