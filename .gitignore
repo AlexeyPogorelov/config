@@ -1,11 +1,11 @@
-/*
+**/*
 !/.xinitrc
 !/.Xresources
 !/.gitignore
 !/cheatsheet.md
 !/compton.conf
 !/vsftpd/vsftpd.conf
-!/sh/*.sh
+!sh/*.sh
 !/vifm/vifmrc
 !/vifm/colors/Gruvbox.vifm
 !/mc
