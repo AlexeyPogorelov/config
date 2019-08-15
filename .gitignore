@@ -4,6 +4,7 @@
 !/.gitignore
 !/cheatsheet.md
 !/compton.conf
+!/vsftpd/vsftpd.conf
 !/sh/*.sh
 !/vifm/vifmrc
 !/vifm/colors/Gruvbox.vifm
