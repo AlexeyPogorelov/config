@@ -1,4 +1,30 @@
-ffmpeg -i $1 -vf vidstabdetect=shakiness=10:accuracy=15:result="$1_mytransforms.trf" -f null -
+#!/bin/bash
 
-ffmpeg -i $1 -vf vidstabtransform=zoom=1:input="$1_mytransforms.trf":interpol="bicubic":relative=1 -vcodec libx264 -tune film -acodec copy -preset slow stabilized.mp4
+function usage(){
+  echo usage:
+  echo $0' <input video file>'
+}
+
+# exactly one argument required
+if [ $# -ne 1 ]
+then
+  usage
+  exit 1
+fi
+
+INFILE=$1
+if [ ! -f $INFILE ]
+then
+  echo 'Input file does not exist or is not a regular file'
+  exit 2
+fi
+
+BASENAME=${1##*/}
+EXT=${1##*.}
+BASE_WITHOUT_EXT=${BASENAME%.*}
+STABFILE=("${BASE_WITHOUT_EXT}.trf")
+LUTFILE=("${BASE_WITHOUT_EXT}.cube")
+OUT_NAME=("${BASE_WITHOUT_EXT}_processed.mp4")
+
+ffmpeg -i $INFILE -vf "vidstabtransform=zoom=1:input=$STABFILE:interpol=bicubic:relative=1,unsharp,lut3d=$LUTFILE" -vcodec libx264 -tune film -acodec copy -preset slow -s 1920x1080 $OUT_NAME
 
