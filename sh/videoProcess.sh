@@ -26,5 +26,19 @@ STABFILE=("${BASE_WITHOUT_EXT}.trf")
 LUTFILE=("${BASE_WITHOUT_EXT}.cube")
 OUT_NAME=("${BASE_WITHOUT_EXT}_processed.mp4")
 
-ffmpeg -i $INFILE -vf "vidstabtransform=zoom=1:input=$STABFILE:interpol=bicubic:relative=1,unsharp,lut3d=$LUTFILE" -vcodec libx264 -tune film -acodec copy -preset slow -s 1920x1080 $OUT_NAME
+if [ ! -f $STABFILE ]
+then
+  echo 'Creating stab detect file'
+  ffmpeg -y -i $INFILE -vf \
+    vidstabdetect=shakiness=10:accuracy=15:result=$STABFILE -f null -
+fi
+
+STAB_OPTIONS="vidstabtransform=zoom=1:input=$STABFILE:interpol=bicubic:relative=1,"
+UNSHARP_OPTIONS="unsharp=5:5:0.8:3:3:0.4,"
+
+ffmpeg -y -i $INFILE -vf \
+  "$STAB_OPTIONS $UNSHARP_OPTIONS lut3d=$LUTFILE" \
+  -vcodec libx264 -crf 18 -tune film -preset slow \
+  -acodec copy \
+  -s 1920x1080 $OUT_NAME
 
