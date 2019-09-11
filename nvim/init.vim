@@ -64,6 +64,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'mattn/emmet-vim'
 Plug 'jwalton512/vim-blade'
+Plug 'mxw/vim-jsx'
 call plug#end()
 
 colorscheme gruvbox

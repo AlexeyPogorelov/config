@@ -111,23 +111,23 @@ getConfiguredPlayer()
     elif [[ -f $HOME/Applications/mpv.app/Contents/MacOS/mpv ]]; then
       player="$HOME/Applications/mpv.app/Contents/MacOS/mpv"
     else
-	  if [[ $(mdutil -s / | grep "Indexing enabled." 2>/dev/null) != "" ]]; then
-	    vlc_md=$(mdfind kMDItemCFBundleIdentifier = "org.videolan.vlc" 2>/dev/null)
-	    if [[ $vlc_md != "" ]]; then
-	      player="$vlc_md/Contents/MacOS/VLC"
-	    else
-	      mpv_md=$(mdfind kMDItemCFBundleIdentifier = "io.mpv" 2>/dev/null)
-	      if [[ $mpv_md != "" ]]; then
-	        player="$mpv_md/Contents/MacOS/mpv"
-	      else
-	        echo "Error: no supported video player installed (VLC or mpv)" >&2
-	        return 1
-	      fi
-	    fi
-	  else
-	    echo "Error: no supported video player installed (VLC or mpv)" >&2
-	    return 1
-	  fi
+    if [[ $(mdutil -s / | grep "Indexing enabled." 2>/dev/null) != "" ]]; then
+      vlc_md=$(mdfind kMDItemCFBundleIdentifier = "org.videolan.vlc" 2>/dev/null)
+      if [[ $vlc_md != "" ]]; then
+        player="$vlc_md/Contents/MacOS/VLC"
+      else
+        mpv_md=$(mdfind kMDItemCFBundleIdentifier = "io.mpv" 2>/dev/null)
+        if [[ $mpv_md != "" ]]; then
+          player="$mpv_md/Contents/MacOS/mpv"
+        else
+          echo "Error: no supported video player installed (VLC or mpv)" >&2
+          return 1
+        fi
+      fi
+    else
+      echo "Error: no supported video player installed (VLC or mpv)" >&2
+      return 1
+    fi
     fi
   fi
 }

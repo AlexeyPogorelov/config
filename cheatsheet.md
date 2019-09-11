@@ -29,6 +29,9 @@ stop ftp server `sudo service vsftpd stop`
 ### Get folders sizes
 `du -h --max-depth=1 | sort -hr`
 
+### Process files
+run sh script for all files in folder `find . -iname '*.mp4' -exec sh ~/.config/sh/videoProcess.sh "{}" \`
+
 ### share file
 `curl --upload-file [file] https://transfer.sh/[name]`
 
@@ -67,4 +70,8 @@ svg `cp *.svg compressed/ && svgo -r compressed/ -p 2 --multipass`
 
 ### working with files
 get folders sizes `du -hsc *`
+
+### ffmpeg
+get video from images `ffmpeg -framerate 24 -pattern_type glob -i '*.png' -i {{file}}.wav -acodec aac -b:a 192k -shortest -c:v libx264 -r 24 -pix_fmt yuv420p {{out}}.mp4`
+convert wav to mp3 `ffmpeg -i {{file}}.wav -vn -ar 44100 -ac 2 -b:a 320k {{out}}.mp3`
 
