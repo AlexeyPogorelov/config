@@ -65,6 +65,9 @@ Plug 'leafgarland/typescript-vim'
 Plug 'mattn/emmet-vim'
 Plug 'jwalton512/vim-blade'
 Plug 'mxw/vim-jsx'
+Plug 'kchmck/vim-coffee-script'
+Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+Plug 'wavded/vim-stylus'
 call plug#end()
 
 colorscheme gruvbox
