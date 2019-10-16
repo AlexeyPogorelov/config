@@ -26,9 +26,10 @@ set showmatch                   " show matching braces
 " make backspace behave in a sane manner
 set backspace=indent,eol,start
 
-" set undodir=~/temp/.vim/.undo//
-" set backupdir=~/temp/.vim/.backup//
-" set directory=~/temp/.vim/.swp//
+" set undodir="~/temp/.vim//"
+" set undofile
+" set backupdir=$HOME."/temp/.vim//"
+
 set noswapfile                  " Don't use swapfile
 set nobackup                    " Don't create annoying backup files
 
@@ -41,8 +42,8 @@ set hidden                      " current buffer can be put into background
 set cmdheight=1                 " command bar height
 set nocompatible                " not compatible with vi
 
-set history=1000                " remember more commands and search history
-set undolevels=1000             " use many muchos levels of undo
+set history=4000                " remember more commands and search history
+set undolevels=4000             " use many muchos levels of undo
 
 call plug#begin('~/.vim/plugged')
 Plug 'neomake/neomake'
@@ -68,6 +69,9 @@ Plug 'mxw/vim-jsx'
 Plug 'kchmck/vim-coffee-script'
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'wavded/vim-stylus'
+Plug 'godlygeek/tabular'
+Plug 'yuttie/comfortable-motion.vim'
+Plug 'mbbill/undotree'
 call plug#end()
 
 colorscheme gruvbox
@@ -116,6 +120,7 @@ set updatetime=100
 tnoremap <ESC><ESC> <C-\><C-N>
 noremap <F3> :set list!<CR>
 noremap <F4> :set relativenumber!<CR>
+nnoremap <F5> :UndotreeToggle<CR>
 command! E Explore
 
 "pangloss/vim-javascript config
