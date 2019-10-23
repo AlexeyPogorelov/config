@@ -72,6 +72,8 @@ Plug 'wavded/vim-stylus'
 Plug 'godlygeek/tabular'
 Plug 'yuttie/comfortable-motion.vim'
 Plug 'mbbill/undotree'
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'NikolayFrantsev/jshint2.vim'
 call plug#end()
 
 colorscheme gruvbox
