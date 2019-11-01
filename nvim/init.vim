@@ -45,6 +45,10 @@ set nocompatible                " not compatible with vi
 set history=4000                " remember more commands and search history
 set undolevels=4000             " use many muchos levels of undo
 
+" Autocomplete
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+
 call plug#begin('~/.vim/plugged')
 Plug 'neomake/neomake'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -74,6 +78,8 @@ Plug 'yuttie/comfortable-motion.vim'
 Plug 'mbbill/undotree'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'NikolayFrantsev/jshint2.vim'
+Plug 'herringtondarkholme/yats.vim'
+Plug 'peitalin/vim-jsx-typescript'
 call plug#end()
 
 colorscheme gruvbox
@@ -123,6 +129,7 @@ tnoremap <ESC><ESC> <C-\><C-N>
 noremap <F3> :set list!<CR>
 noremap <F4> :set relativenumber!<CR>
 nnoremap <F5> :UndotreeToggle<CR>
+noremap <F6> :setlocal spell! spellang=en_us<CR>
 command! E Explore
 
 "pangloss/vim-javascript config
