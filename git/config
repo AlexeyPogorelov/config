@@ -1,0 +1,13 @@
+[user]
+	email = c_apogorelov@groupon.com
+	name = Alexey Pogorelov
+[core]
+	editor = vim
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[alias]
+	d = difftool
+[merge]
+	tool = vimdiff

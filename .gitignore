@@ -18,6 +18,7 @@
 !/i3status/config
 !/nvim/init.vim
 !/tmux/.tmux.conf
+!/git/config
 !/lazygit
 !/README.md
 
