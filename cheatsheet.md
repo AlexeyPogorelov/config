@@ -79,3 +79,6 @@ convert wav to mp3 `ffmpeg -i {{file}}.wav -vn -ar 44100 -ac 2 -b:a 320k {{out}}
 show all `sudo lsof -i`
 check specific `sudo lsof -i | grep 8000`
 
+### watch movie
+star wars `telnet towel.blinkenlights.nl`
+
