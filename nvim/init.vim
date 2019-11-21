@@ -32,6 +32,7 @@ set backspace=indent,eol,start
 
 set noswapfile                  " Don't use swapfile
 set nobackup                    " Don't create annoying backup files
+set nowritebackup
 
 set noerrorbells                " No beeps
 set splitright                  " Split vertical windows right to the current windows
@@ -39,7 +40,7 @@ set splitbelow                  " Split horizontal windows below to the current 
 set fileformats=unix,dos,mac    " Prefer Unix over Windows over OS 9 formats
 set wildmenu                    " enhanced command line completion
 set hidden                      " current buffer can be put into background
-set cmdheight=1                 " command bar height
+set cmdheight=2                 " command bar height
 set nocompatible                " not compatible with vi
 
 set history=4000                " remember more commands and search history
@@ -50,6 +51,7 @@ filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 
 call plug#begin('~/.vim/plugged')
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neomake/neomake'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'rking/ag.vim'
