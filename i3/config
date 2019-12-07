@@ -208,7 +208,7 @@ exec "setxkbmap -layout us,ru"
 exec --no-startup-id "sleep 10; setxkbmap -option 'grp:alt_space_toggle'"
 
 # autorun
-exec "gnome-terminal -e tmux"
+exec "gnome-terminal -e 'nvim ~/notes.md'"
 
 # THEME
 set $bg0 #1d2021

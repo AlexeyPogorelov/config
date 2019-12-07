@@ -49,19 +49,6 @@ run sh script for all files in folder `find . -iname '*.mp4' -exec sh ~/.config/
 set form comand line `xrdb -merge <(echo "Xft.dpi: 96")`
 load from file `xrdb ~/.Xresources`
 
-### great htop alternative
-`glances`
-
-### check network speed
-check speed `speedtest-cli`
-monitor speed `speedometer -r wlp2s0`
-
-### convert video
-convert to VP9 `ffmpeg -i input.mp4 -vf scale=1280:720 -c:v libvpx-vp9 -b:v 600K -b:a 128k -ac 1 -c:a libopus -cpu-used 0 -threads 8 output.webm`
-apply 3dlut to video `ffmpeg -i input -vf lut3d="file=<apsolute file path>" -c:a copy -threads 1 -s 1280x720 output`
-slowdown 4 times to target 30 fps `ffmpeg -i input -vf setpts=4*PTS -r 30 output`
-split part of the video `ffmpeg -ss 10 -t 40 -i input -vcodec copy -acodec copy output`
-
 ### compress images
 png lossy `cp *.png ./compressed/ && find ./compressed -iname "*.png" -exec pngquant --quality=35-80 --skip-if-larger -s1 --ext=.png --force {} +`
 png lossless `optipng -preserve -dir compressed/ -o7 -zm1-9 *.png`
@@ -74,6 +61,13 @@ get folders sizes `du -hsc *`
 ### ffmpeg
 get video from images `ffmpeg -framerate 24 -pattern_type glob -i '*.png' -i {{file}}.wav -acodec aac -b:a 192k -shortest -c:v libx264 -r 24 -pix_fmt yuv420p {{out}}.mp4`
 convert wav to mp3 `ffmpeg -i {{file}}.wav -vn -ar 44100 -ac 2 -b:a 320k {{out}}.mp3`
+split part of the video 1 `ffmpeg -ss 10 -t 40 -i {{input}} -vcodec copy -acodec copy {{output}}`
+split part of the video 2 `ffmpeg -i {{input}} -ss 00:00:02 -t 00:00:04 -async 1 {{out}}`
+capture the screen `ffmpeg -video_size 1920x1080 -framerate 25 -f x11grab -i :0.0+100,200 output.mp4`
+video to GIF `ffmpeg -ss 00:00:06 -t 00:00:31 -i {{input}} -f gif -filter_complex "[0:v] fps=12,scale=w=480:h=-1,split [a][b];[a] palettegen=stats_mode=single [p];[b][p] paletteuse=new=1" {{out}}.gif`
+convert to VP9 `ffmpeg -i input.mp4 -vf scale=1280:720 -c:v libvpx-vp9 -b:v 600K -b:a 128k -ac 1 -c:a libopus -cpu-used 0 -threads 8 output.webm`
+apply 3dlut to video `ffmpeg -i input -vf lut3d="file=<apsolute file path>" -c:a copy -threads 1 -s 1280x720 output`
+slowdown 4 times to target 30 fps `ffmpeg -i input -vf setpts=4*PTS -r 30 output`
 
 ### show opened ports
 show all `sudo lsof -i`

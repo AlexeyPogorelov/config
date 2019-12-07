@@ -51,7 +51,7 @@ filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 
 call plug#begin('~/.vim/plugged')
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neomake/neomake'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'rking/ag.vim'
@@ -82,6 +82,7 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'NikolayFrantsev/jshint2.vim'
 Plug 'herringtondarkholme/yats.vim'
 Plug 'peitalin/vim-jsx-typescript'
+Plug 'digitaltoad/vim-jade'
 call plug#end()
 
 colorscheme gruvbox
