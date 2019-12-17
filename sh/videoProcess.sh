@@ -35,8 +35,8 @@ then
 fi;
 
 if [ -f $LUTFILE ]
-  LUT_OPTIONS="lut3d=$LUTFILE"
 then
+  LUT_OPTIONS=", lut3d=$LUTFILE"
 else
   LUT_OPTIONS=""
 fi;
@@ -47,8 +47,8 @@ then
   mkdir $OUT_DIR
 fi;
 
-STAB_OPTIONS="vidstabtransform=zoom=1:input=$STABFILE:interpol=bicubic:relative=1,"
-UNSHARP_OPTIONS="unsharp=5:5:0.8:3:3:0.4,"
+STAB_OPTIONS="vidstabtransform=zoom=1:input=$STABFILE:interpol=bicubic:relative=1"
+UNSHARP_OPTIONS=", unsharp=5:5:0.8:3:3:0.4"
 
 ffmpeg -y -i $INFILE -vf \
   "$STAB_OPTIONS $UNSHARP_OPTIONS $LUT_OPTIONS" \

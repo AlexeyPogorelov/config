@@ -65,9 +65,10 @@ split part of the video 1 `ffmpeg -ss 10 -t 40 -i {{input}} -vcodec copy -acodec
 split part of the video 2 `ffmpeg -i {{input}} -ss 00:00:02 -t 00:00:04 -async 1 {{out}}`
 capture the screen `ffmpeg -video_size 1920x1080 -framerate 25 -f x11grab -i :0.0+100,200 output.mp4`
 video to GIF `ffmpeg -ss 00:00:06 -t 00:00:31 -i {{input}} -f gif -filter_complex "[0:v] fps=12,scale=w=480:h=-1,split [a][b];[a] palettegen=stats_mode=single [p];[b][p] paletteuse=new=1" {{out}}.gif`
-convert to VP9 `ffmpeg -i input.mp4 -vf scale=1280:720 -c:v libvpx-vp9 -b:v 600K -b:a 128k -ac 1 -c:a libopus -cpu-used 0 -threads 8 output.webm`
+convert to VP9 `ffmpeg -i {{input}} -vf scale=1280:720 -c:v libvpx-vp9 -b:v 600K -b:a 128k -ac 1 -c:a libopus -cpu-used 0 -threads 8 {{output}}.webm`
 apply 3dlut to video `ffmpeg -i input -vf lut3d="file=<apsolute file path>" -c:a copy -threads 1 -s 1280x720 output`
 slowdown 4 times to target 30 fps `ffmpeg -i input -vf setpts=4*PTS -r 30 output`
+scale to ratio 2.4x1 `ffmpeg -i {{input}} -vf "scale=1920x800,setsar=1:1" {{output}}`
 
 ### show opened ports
 show all `sudo lsof -i`
@@ -76,3 +77,5 @@ check specific `sudo lsof -i | grep 8000`
 ### watch movie
 star wars `telnet towel.blinkenlights.nl`
 
+### Docker
+run image `docker run -v $PWD:/temp/ -it --entrypoint='bash' jrottenberg/ffmpeg`
