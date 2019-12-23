@@ -1,6 +1,3 @@
-### get help
-`curl cheat.sh`
-
 ### WiFi
 turn on wifi `nmcli r wifi on`
 get list of wifi networks `nmcli d wifi list`
@@ -26,20 +23,16 @@ set default audio output `echo 'set-default-source bluez_sink.00_42_79_B5_9B_A8.
 start ftp server `sudo service vsftpd start`
 stop ftp server `sudo service vsftpd stop`
 
-### Get folders sizes
-`du -h --max-depth=1 | sort -hr`
-
-### Process files
+### files
+get folders sizes `du -h --max-depth=1 | sort -hr`
 run sh script for all files in folder `find . -iname '*.mp4' -exec sh ~/.config/sh/videoProcess.sh "{}" \`
 
-### share file
-`curl --upload-file [file] https://transfer.sh/[name]`
-
-### get weather
-`curl wttr.in`
-
-### generate QR code
-`curl qrenco.de/this`
+### curl
+help `curl cheat.sh`
+my IP `curl ifconfig.co`
+weather `curl wttr.in`
+share file `curl --upload-file [file] https://transfer.sh/[name]`
+generate QR code `curl qrenco.de/this`
 
 ### tmux change root folder
 `Ctrl`+`b` `:`
@@ -55,9 +48,6 @@ png lossless `optipng -preserve -dir compressed/ -o7 -zm1-9 *.png`
 jpeg `jpegoptim -d ./compressed/ -m 80 -T 10% -P *.jpg`
 svg `cp *.svg compressed/ && svgo -r compressed/ -p 2 --multipass`
 
-### working with files
-get folders sizes `du -hsc *`
-
 ### ffmpeg
 get video from images `ffmpeg -framerate 24 -pattern_type glob -i '*.png' -i {{file}}.wav -acodec aac -b:a 192k -shortest -c:v libx264 -r 24 -pix_fmt yuv420p {{out}}.mp4`
 convert wav to mp3 `ffmpeg -i {{file}}.wav -vn -ar 44100 -ac 2 -b:a 320k {{out}}.mp3`
@@ -72,10 +62,10 @@ scale to ratio 2.4x1 `ffmpeg -i {{input}} -vf "scale=1920x800,setsar=1:1" {{outp
 
 ### show opened ports
 show all `sudo lsof -i`
-check specific `sudo lsof -i | grep 8000`
-
-### watch movie
-star wars `telnet towel.blinkenlights.nl`
 
 ### Docker
 run image `docker run -v $PWD:/temp/ -it --entrypoint='bash' jrottenberg/ffmpeg`
+
+### fun
+watch star wars `telnet towel.blinkenlights.nl`
+
