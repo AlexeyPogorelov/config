@@ -6,6 +6,7 @@ set spell spelllang=en_us
 set t_Co=256
 syntax enable
 set termguicolors
+set sessionoptions-=options
 
 set tabstop=2
 set shiftwidth=2
@@ -83,6 +84,7 @@ Plug 'NikolayFrantsev/jshint2.vim'
 Plug 'herringtondarkholme/yats.vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'digitaltoad/vim-jade'
+Plug 'junegunn/goyo.vim'
 call plug#end()
 
 colorscheme gruvbox
@@ -129,6 +131,9 @@ set updatetime=100
 
 "key bindings
 tnoremap <ESC><ESC> <C-\><C-N>
+nnoremap <F1> :Goyo<CR>
+nnoremap <F2> :mksession! ~/session.vim<CR>
+nnoremap <F2><F2> :source ~/session.vim<CR>
 noremap <F3> :set list!<CR>
 noremap <F4> :set relativenumber!<CR>
 nnoremap <F5> :UndotreeToggle<CR>
