@@ -65,6 +65,7 @@ show all `sudo lsof -i`
 
 ### Docker
 run image `docker run -v $PWD:/temp/ -it --entrypoint='bash' jrottenberg/ffmpeg`
+start VSCode server `docker run -it -p 8080:8080 -v "${HOME}/.local/share/code-server:/home/coder/.local/share/code-server" -v "$PWD:/home/coder/project" codercom/code-server:v2`
 
 ### fun
 watch star wars `telnet towel.blinkenlights.nl`
