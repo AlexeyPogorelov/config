@@ -204,6 +204,7 @@ exec_always feh --bg-fill ~/Pictures/bg.png
 # languages config
 exec "setxkbmap -layout us,ru"
 exec --no-startup-id "sleep 10; setxkbmap -option 'grp:alt_space_toggle'"
+exec --no-startup-id "sleep 11; xmodmap -e 'remove lock = Caps_Lock'"
 
 # autorun
 exec "gnome-terminal"
