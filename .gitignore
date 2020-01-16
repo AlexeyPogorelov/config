@@ -5,7 +5,7 @@
 !/cheatsheet.md
 !/compton.conf
 !/vsftpd/vsftpd.conf
-!sh/*.sh
+!/sh/*
 !/vifm/vifmrc
 !/vifm/colors/Gruvbox.vifm
 !/mc
@@ -20,5 +20,6 @@
 !/tmux/.tmux.conf
 !/git/config
 !/lazygit
+!/.dmenurc
 !/README.md
 
