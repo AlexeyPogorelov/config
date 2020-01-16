@@ -5,15 +5,12 @@ connect to network `nmcli d wifi connect <ssid> password <password>`
 
 ### BlueTooth
 get to internal comand prompt `bluetoothctl`
-some usteful commands `power on` `agent on` `default-agent` `scan on` `scan off`
+some usteful commands `power on`, `agent on`, `default-agent`, `scan on`, `scan off`
 pait new device `pair <id>`
 connect paired device `connect <id>`
 
 ### Multiple displays
-apply default settings `xrandr --auto`
-turn on second display `xrandr --output eDP1 --auto --output HDMI1 --auto --left-of eDP1`
-turn off second display `xrandr --output DP1 --off`
-move workspace to external display `i3 move workspace to left`
+move workspace to external display `i3 move workspace to right`
 
 ### Audio
 get list of available outputs `pacmd list-sources | grep -e device.string -e 'name:'`
@@ -54,7 +51,8 @@ get video from images `ffmpeg -framerate 24 -pattern_type glob -i '*.png' -i {{i
 convert wav to mp3 `ffmpeg -i {{input}}.wav -vn -ar 44100 -ac 2 -b:a 320k {{output}}.mp3`
 split part of the video 1 `ffmpeg -ss 10 -t 40 -i {{input}} -vcodec copy -acodec copy {{output}}`
 split part of the video 2 `ffmpeg -i {{input}} -ss 00:00:02 -t 00:00:04 -async 1 {{output}}`
-capture the screen `ffmpeg -video_size 1920x1080 -framerate 25 -f x11grab -i :0.0+100,200 {{output}}.mp4`
+capture screen video `ffmpeg -i :0.0+100,200 -f x11grab -framerate 25 -video_size 1920x1080 {{output}}.mp4`
+capture screen image `ffmpeg -i :0.0+100,200 -f x11grab -framerate 1 -video_size 1920x1080 -vframes 1 {{output}}.jpeg`
 video to GIF `ffmpeg -ss 00:00:06 -t 00:00:31 -i {{input}} -f gif -filter_complex "[0:v] fps=12,scale=w=480:h=-1,split [a][b];[a] palettegen=stats_mode=single [p];[b][p] paletteuse=new=1" {{output}}.gif`
 convert to VP9 `ffmpeg -i {{input}} -vf scale=1280:720 -c:v libvpx-vp9 -b:v 600K -b:a 128k -ac 1 -c:a libopus -cpu-used 0 -threads 8 {{output}}.webm`
 apply 3dlut to video `ffmpeg -i {{input}} -vf lut3d="file=<apsolute file path>" -c:a copy -threads 1 -s 1280x720 {{output}}`

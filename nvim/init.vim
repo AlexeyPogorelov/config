@@ -55,7 +55,6 @@ call plug#begin('~/.vim/plugged')
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neomake/neomake'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'rking/ag.vim'
 Plug 'morhetz/gruvbox'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
@@ -63,7 +62,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdcommenter'
 Plug 'rking/ag.vim', { 'on': 'Ag' }
-Plug 'thinca/vim-quickrun'
 Plug 'cohama/agit.vim'
 Plug 'rakr/vim-one'
 Plug 'jiangmiao/auto-pairs'
