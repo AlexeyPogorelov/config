@@ -14,7 +14,7 @@ chosen=$(echo -e $choices | dmenu -nb '#1d2021' -nf '#928374' -sb '#d79921' -sf 
 if [ `xrandr | grep HDMI1 | grep -c ' connected '` -eq 1 ]; then
   EXTERNAL_OUTPUT="HDMI1"
 fi
-if [ `xrandr | grep DP1 | grep -c ' connected '` -eq 1 ]; then
+if [ `xrandr | grep DP1 | grep -c ' connected '` -eq 2 ]; then
   EXTERNAL_OUTPUT="DP1"
 fi
 
