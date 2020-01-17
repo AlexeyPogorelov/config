@@ -1,11 +1,19 @@
 # My config for Linux
-here is list of available sh scripts
+Clone this repo to `~/.config` folder.
 
-#### Reload TouchPad to fix issue for Surface Laptop
-`sudo watch -n 80 sh ~/.config/resetTouchpad.sh`
+### install software
+- neovim
+- nvm
+- vifm
+- i3-wm
+- lazygit
+- compton
+- chromium
 
-#### Turns on Jack audio to get wine ASIO work
-`~/.config/runJackAudio.sh`
+### install fonts
+- `FontAwesome` for icons
+- link compton config
 
-#### Run it to get external display work
-`~/.config/runSecondScreen.sh`
+### install env
+- install `VimPlug` and plugins for `nvim`
+
