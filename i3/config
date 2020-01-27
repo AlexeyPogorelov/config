@@ -35,6 +35,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+z exec "rxvt-unicode"
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -215,7 +216,7 @@ exec_always feh --bg-fill ~/Pictures/bg.png
 exec_always --no-startup-id "setxkbmap -layout us,ru -option grp:alt_space_toggle -option 'caps:none'"
 
 # autorun
-exec "gnome-terminal"
+exec "rxvt-unicode"
 
 # Widow Colours
 # class                  border | backgr | text   | indicator | child_border

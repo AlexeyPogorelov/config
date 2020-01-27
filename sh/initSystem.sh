@@ -31,8 +31,10 @@ if [[ $input == "i3" ]]; then
   install_dependency dmenu
   install_dependency sxiv
   install_dependency tmux
+  install_dependency "rxvt-unicode"
   ln -s ~/.config/tmux/.tmux.conf ~
   ln -s ~/.config/.Xresources ~
+  ln -s ~/.config/.Xdefaults ~
   ln -s ~/.config/.xinitrc ~
 
   log_message "i3-wm, tmux and sxiv was installed"

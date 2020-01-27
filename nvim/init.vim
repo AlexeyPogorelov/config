@@ -5,7 +5,6 @@ set modifiable
 set spell spelllang=en_us
 set t_Co=256
 syntax enable
-set termguicolors
 set sessionoptions-=options
 
 set tabstop=2
@@ -97,7 +96,7 @@ autocmd FileType scss,sass,css EmmetInstall
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)|(node_modules|dist|build)$',
-  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'file': '\v\.(exe|so|dll|zip)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
 
