@@ -1,19 +1,12 @@
 # My config for Linux
 Clone this repo to `~/.config` folder.
 
-### install software
-- neovim
-- nvm
-- vifm
-- i3-wm
-- lazygit
-- compton
-- chromium
+### setup configuration using script
+- run script `~/.config/sh/initSystem.sh`
 
 ### install fonts
 - `FontAwesome` for icons
-- link compton config
 
-### install env
-- install `VimPlug` and plugins for `nvim`
+### install plugins for VIM
+- use `PlugInstall` to charge vim
 

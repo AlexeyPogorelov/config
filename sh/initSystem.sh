@@ -2,43 +2,54 @@
 
 set -eu -o pipefail # fail on error , debug all lines
 
-echo "Enter one of ['docker', 'lazygit', 'nodejs', 'nvm', 'neovim'] or 'all'"
+sudo apt update
+clear
+
+echo "Enter one of ['docker', 'nvm', 'vim', 'i3']"
 
 sudo -n true
 test $? -eq 0 || exit 1 "you should have sudo priveledge to run this script."
 
 read input
 
+function log_message {
+  if  command -v cowsay &>/dev/null; then
+    cowsay $1
+  else
+    echo $1
+  fi
+}
+
 function install_dependency {
-  echo "--- Installing dependency: $1"
+  log_message "--- Installing dependency: $1"
   sudo apt -y install $1
 }
 
-if [ $input == "lazygit" ]; then
-  install_dependency lazygit
-  echo "Lazygit installed"
+if [[ $input == "i3" ]]; then
+  install_dependency cowsay
+  install_dependency "i3-wm"
+  install_dependency sxiv
+  install_dependency tmux
+  ln -s ~/.config/tmux/.tmux.conf ~
+  ln -s ~/.config/.Xresources ~
+  ln -s ~/.config/.xinitrc ~
 
-elif [ $input == "neovim" ] || [ $input == "vim" ]; then
+  log_message "i3-wm, tmux and sxiv was installed"
+
+elif [[ $input == "vim" ]]; then
   install_dependency neovim
+  install_dependency vifm
+  install_dependency lazygit
+  # install VimPlug
+  curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  log_message "nvim, lazygit, and vifm installed"
 
-elif [ $input == "nodejs" ] || [ $input == "node" ]; then
-  echo "installing nodejs.. - To install your own NodeJS version, try nvm option"
-
-  echo "--- Removing any pre-installed NodeJS"
-  sudo apt-get -qq remove nodejs
-
-  curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
-  install_dependency nodejs
-  echo "NodeJS installed!"
-
-elif [ $input == "nvm" ]; then
+elif [[ $input == "nvm" ]]; then
   echo "Installing NVM [Node Version Manager]...."
-
-  sudo apt-get update
 
   sudo apt-get install build-essential libssl-dev
 
-  curl https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
 
   . ~/.nvm/nvm.sh
   . ~/.profile
@@ -58,14 +69,12 @@ elif [ $input == "nvm" ]; then
   echo "Run 'nvm ls' to see NodeJS version installed!"
   echo "Run 'nvm use {nodejsverison}' to run a specified NodeJS version from the NodeJS installed list"
 
-elif [ $input == "docker" ]; then
+elif [[ $input == "docker" ]]; then
   echo "Installing Docker...."
 
   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
   sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-
-  sudo apt-get update
 
   echo "Making sure the Docker is installed from Official Docker repo to get the latest version"
   dockerInstallLoc="$(apt-cache policy docker-ce)"
@@ -94,6 +103,6 @@ elif [ $input == "docker" ]; then
 
 else
   echo "Nothing was installed!"
-  echo "Bye!"
+  log_message "Bye!"
 fi
 
