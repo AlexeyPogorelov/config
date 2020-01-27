@@ -28,6 +28,7 @@ function install_dependency {
 if [[ $input == "i3" ]]; then
   install_dependency cowsay
   install_dependency "i3-wm"
+  install_dependency dmenu
   install_dependency sxiv
   install_dependency tmux
   ln -s ~/.config/tmux/.tmux.conf ~
