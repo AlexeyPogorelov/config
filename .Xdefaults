@@ -5,6 +5,7 @@ st.alpha: 1.00
 URxvt.font: xft:monospace:size=14
 URxvt.letterSpace: -1
 URxvt.scrollBar: false
+URxvt.underlineURLs: true
 
 ! st.termname: st-256color
 ! st.borderpx: 2

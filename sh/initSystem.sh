@@ -2,9 +2,6 @@
 
 set -eu -o pipefail # fail on error , debug all lines
 
-sudo apt update
-clear
-
 echo "Enter one of ['docker', 'nvm', 'vim', 'i3']"
 
 sudo -n true
@@ -26,10 +23,13 @@ function install_dependency {
 }
 
 if [[ $input == "i3" ]]; then
-  install_dependency cowsay
+  sudo apt update
+  install_dependency "util-vserver"
   install_dependency "i3-wm"
+  install_dependency cowsay
   install_dependency dmenu
   install_dependency sxiv
+  install_dependency vtop
   install_dependency tmux
   install_dependency "rxvt-unicode"
   ln -s ~/.config/tmux/.tmux.conf ~
@@ -40,9 +40,13 @@ if [[ $input == "i3" ]]; then
   log_message "i3-wm, tmux and sxiv was installed"
 
 elif [[ $input == "vim" ]]; then
+  sudo add-apt-repository ppa:lazygit-team/release
+  sudo apt update
+
   install_dependency neovim
   install_dependency vifm
   install_dependency lazygit
+
   # install VimPlug
   curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   log_message "nvim, lazygit, and vifm installed"
