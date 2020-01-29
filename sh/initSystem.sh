@@ -45,6 +45,7 @@ elif [[ $input == "vim" ]]; then
 
   install_dependency neovim
   install_dependency vifm
+  install_dependency xclip
   install_dependency lazygit
 
   # install VimPlug
