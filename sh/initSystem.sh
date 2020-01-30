@@ -36,6 +36,18 @@ if [[ $input == "i3" ]]; then
   ln -s ~/.config/.Xresources ~
   ln -s ~/.config/.Xdefaults ~
   ln -s ~/.config/.xinitrc ~
+  ln -s ~/.config/_assets/bg.png ~/Pictures/
+
+  # create fonts directory if it is not exists
+  if [[ ! -d ~/.fonts ]]
+  then
+    mkdir ~/.fonts
+  fi;
+  if [[ ! -d ~/.fonts/Font-Awesome ]]
+  then
+    mkdir ~/.fonts/Font-Awesome
+  fi;
+  ln -s ~/.config/_assets/Font-Awesome ~/.fonts/Font-Awesome
 
   log_message "i3-wm, tmux and sxiv was installed"
 
