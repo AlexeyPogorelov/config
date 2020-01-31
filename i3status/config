@@ -55,7 +55,7 @@ battery 0 {
   status_bat = ""
   status_unk = ""
   status_full = ""
-  path = "/sys/class/power_supply/BAT1/uevent"
+  path = "/sys/class/power_supply/BAT0/uevent"
   low_threshold = 10
 }
 
@@ -93,7 +93,7 @@ load {
 
 cpu_temperature 0 {
   format = "%degrees °C"
-  path = "/sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input"
+  path = "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp1_input"
 }
 
 disk "/" {
