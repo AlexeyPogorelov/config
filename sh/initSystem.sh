@@ -67,7 +67,8 @@ elif [[ $input == "vim" ]]; then
   install_dependency lazygit
 
   # install VimPlug
-  curl -fLo $HOME_FOLDER/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  sudo -u $SUDO_USER bash -c "curl -fLo $HOME_FOLDER/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+
   log_message "nvim, lazygit, and vifm installed"
 
 elif [[ $input == "nvm" ]]; then
