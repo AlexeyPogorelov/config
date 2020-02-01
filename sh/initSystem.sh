@@ -37,6 +37,7 @@ if [[ $input == "i3" ]]; then
   install_dependency "tty-clock"
   install_dependency "silversearcher-ag"
   install_dependency i3status
+  install_dependency compton
   install_dependency xbacklight
   install_dependency feh
   install_dependency cowsay
