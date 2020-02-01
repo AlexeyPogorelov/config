@@ -37,6 +37,7 @@ if [[ $input == "i3" ]]; then
   install_dependency "tty-clock"
   install_dependency "silversearcher-ag"
   install_dependency i3status
+  install_dependency xbacklight
   install_dependency feh
   install_dependency cowsay
   install_dependency dmenu
@@ -54,6 +55,10 @@ if [[ $input == "i3" ]]; then
 
   mkdir -p $HOME_FOLDER/.fonts/Font-Awesome
   bind_symlink $HOME_FOLDER/.config/_assets/Font-Awesome $HOME_FOLDER/.fonts/Font-Awesome
+
+  if [[ ! -f /etc/X11/xorg.conf ]]; then
+    bind_symlink $HOME_FOLDER/.config/_assets/xorg.conf /etc/X11/
+  fi
 
   log_message "i3-wm, tmux and sxiv was installed"
 
