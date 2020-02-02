@@ -2,7 +2,7 @@
 
 set -eu -o pipefail # fail on error , debug all lines
 
-echo "Enter one of ['nvm', 'vim', 'i3']"
+echo "Enter one of ['vim', 'i3']"
 
 sudo -n true
 test $? -eq 0 || exit 1 "you should have sudo priveledge to run this script."
@@ -75,31 +75,6 @@ elif [[ $input == "vim" ]]; then
   sudo -u $SUDO_USER bash -c "curl -fLo $HOME_FOLDER/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
 
   log_message "nvim, lazygit, and vifm installed"
-
-elif [[ $input == "nvm" ]]; then
-  echo "Installing NVM [Node Version Manager]...."
-
-  sudo apt-get install build-essential libssl-dev
-
-  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
-
-  . $HOME_FOLDER/.nvm/nvm.sh
-  . $HOME_FOLDER/.profile
-  . $HOME_FOLDER/.bashrc
-
-  nvm --version
-
-  echo "Installing NVM [Node Version Manager] was successful!"
-
-  read -r -p "Please specify the NodeJS version that you want to use - " nodejsversion
-  nodejsversion="${nodejsversion}"
-
-  echo "Installing NodeJS version - $nodejsversion"
-  nvm install $nodejsversion
-
-  echo "Your NodeJS version has been converted into - $nodejsversion"
-  echo "Run 'nvm ls' to see NodeJS version installed!"
-  echo "Run 'nvm use {nodejsverison}' to run a specified NodeJS version from the NodeJS installed list"
 
 else
   echo "Nothing was installed!"
