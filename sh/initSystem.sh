@@ -33,7 +33,6 @@ if [[ $input == "i3" ]]; then
   install_dependency curl
   install_dependency "util-vserver"
   install_dependency "i3-wm"
-  install_dependency "rxvt-unicode"
   install_dependency "tty-clock"
   install_dependency "silversearcher-ag"
   install_dependency i3status

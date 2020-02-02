@@ -216,7 +216,7 @@ exec_always feh --bg-fill ~/Pictures/bg.png
 exec_always --no-startup-id "setxkbmap -layout us,ru -option grp:alt_space_toggle -option 'caps:none'"
 
 # autorun
-exec "rxvt-unicode"
+exec i3-sensible-terminal
 
 # Widow Colours
 # class                  border | backgr | text   | indicator | child_border

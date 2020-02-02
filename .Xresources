@@ -7,3 +7,16 @@ Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
 
+!! URxvt settings block
+!! Set a default font and font size as below:
+URxvt.font: xft:monospace:size=14
+URxvt.letterSpace: -1
+URxvt.scrollBar: false
+URxvt.underlineURLs: true
+URxvt.keysym.Control-Meta-c: builtin-string:
+URxvt.keysym.Control-Meta-v: builtin-string:
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+

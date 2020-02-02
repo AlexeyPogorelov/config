@@ -1,12 +1,6 @@
 !! Transparency (0-1):
 st.alpha: 1.00
 
-!! Set a default font and font size as below:
-URxvt.font: xft:monospace:size=14
-URxvt.letterSpace: -1
-URxvt.scrollBar: false
-URxvt.underlineURLs: true
-
 ! st.termname: st-256color
 ! st.borderpx: 2
 
