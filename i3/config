@@ -207,6 +207,7 @@ bindsym --release Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -
 # lock screen
 bindsym --release $mod+x exec --no-startup-id gnome-terminal --full-screen -e cmatrix
 bindsym --release $mod+shift+x exec --no-startup-id gnome-terminal --full-screen -e 'tty-clock -c -b -B'
+bindsym --release $mod+shift+Escape exec --no-startup-id gnome-terminal --full-screen -e 'vtop -t gruvbox'
 
 # background image
 exec_always compton --config ~/.config/compton.conf
