@@ -6,7 +6,7 @@ if [[ -d $HOME/.cache/ytview ]]; then rm -rf $HOME/.cache/ytview/; fi
 
 player=""
 configuredClient=""
-currentVersion="1.22.1"
+currentVersion="1.23.0"
 flag=""
 
 ## This function determines which http get tool the system has installed and returns an error if there isnt one
@@ -88,6 +88,10 @@ update()
 
 getConfiguredPlayer()
 {
+  if [ ! -z "${YTVIEWPLAYER+x}" ]; then
+    player="$YTVIEWPLAYER"
+    return 0
+  fi
   if [[ $(uname -s) == "Linux" ]]; then
     if command -v vlc &>/dev/null; then
       player="vlc"
@@ -111,23 +115,23 @@ getConfiguredPlayer()
     elif [[ -f $HOME/Applications/mpv.app/Contents/MacOS/mpv ]]; then
       player="$HOME/Applications/mpv.app/Contents/MacOS/mpv"
     else
-    if [[ $(mdutil -s / | grep "Indexing enabled." 2>/dev/null) != "" ]]; then
-      vlc_md=$(mdfind kMDItemCFBundleIdentifier = "org.videolan.vlc" 2>/dev/null)
-      if [[ $vlc_md != "" ]]; then
-        player="$vlc_md/Contents/MacOS/VLC"
-      else
-        mpv_md=$(mdfind kMDItemCFBundleIdentifier = "io.mpv" 2>/dev/null)
-        if [[ $mpv_md != "" ]]; then
-          player="$mpv_md/Contents/MacOS/mpv"
-        else
-          echo "Error: no supported video player installed (VLC or mpv)" >&2
-          return 1
-        fi
-      fi
-    else
-      echo "Error: no supported video player installed (VLC or mpv)" >&2
-      return 1
-    fi
+	  if [[ $(mdutil -s / | grep "Indexing enabled." 2>/dev/null) != "" ]]; then
+	    vlc_md=$(mdfind kMDItemCFBundleIdentifier = "org.videolan.vlc" 2>/dev/null)
+	    if [[ $vlc_md != "" ]]; then
+	      player="$vlc_md/Contents/MacOS/VLC"
+	    else
+	      mpv_md=$(mdfind kMDItemCFBundleIdentifier = "io.mpv" 2>/dev/null)
+	      if [[ $mpv_md != "" ]]; then
+	        player="$mpv_md/Contents/MacOS/mpv"
+	      else
+	        echo "Error: no supported video player installed (VLC or mpv)" >&2
+	        return 1
+	      fi
+	    fi
+	  else
+	    echo "Error: no supported video player installed (VLC or mpv)" >&2
+	    return 1
+	  fi
     fi
   fi
 }
@@ -169,7 +173,6 @@ searchview()
 
   #Let the user choose the video number
   read -p "Choose a video: " titlenumber
-
   if [[ -n ${titlenumber//[0-9]/} ]]; then
     echo "Canceled." >&2
     exit 0

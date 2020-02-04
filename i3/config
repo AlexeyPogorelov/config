@@ -143,7 +143,11 @@ assign [class="Nautilus"] $workspace5
 assign [class="Pulseeffects"] $workspace9
 assign [class="qjackctl"] $workspace9
 assign [class="Jack-rack"] $workspace9
+assign [class="PulseUi"] $workspace9
 assign [class="Upwork"] $workspace9
+
+# rules for classes
+for_window [class="PulseUi"] floating disable
 
 # reload the configuration file
 bindsym $mod+Shift+c reload

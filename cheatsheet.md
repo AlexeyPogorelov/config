@@ -27,7 +27,7 @@ or `for file in *.jpg; do ffmpeg -i "$file" -vf scale=iw*.5:-1 "${file%.jpg}"_ou
 
 ### curl
 help `curl cheat.sh`
-my IP `curl ifconfig.co`
+my IP `curl ifconfig.co` or `curl wgetip.com`
 weather `curl wttr.in`
 share file `curl --upload-file [file] https://transfer.sh/[name]`
 generate QR code `curl qrenco.de/this`
