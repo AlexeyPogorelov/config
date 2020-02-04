@@ -17,6 +17,9 @@ fi
 if [ `xrandr | grep DP1 | grep -c ' connected '` -eq 2 ]; then
   EXTERNAL_OUTPUT="DP1"
 fi
+if [ `xrandr | grep DP2 | grep -c ' connected '` -eq 1 ]; then
+  EXTERNAL_OUTPUT="DP2"
+fi
 
 case "$chosen" in
   external) xrandr --output $INTERNAL_OUTPUT --off --output $EXTERNAL_OUTPUT --auto --primary ;;
