@@ -47,7 +47,9 @@ bindsym $mod+Shift+q kill
 # installed.
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -nb '$bg0' -sf '$bg0' -sb '$yellow1' -nf '$text0' -fn 'monospace-20' -l 45"
 bindsym $mod+shift+w exec --no-startup-id ~/.config/sh/external-display.sh
-bindsym $mod+shift+e exec ~/.config/sh/exit-menu.sh
+bindsym $mod+shift+e exec --no-startup-id ~/.config/sh/exit-menu.sh
+bindsym $mod+t exec --no-startup-id ~/.config/sh/bt-menu.sh
+bindsym $mod+shift+t exec --no-startup-id "~/.config/sh/bt-menu.sh -d"
 
 # change focus
 bindsym $mod+h focus left
