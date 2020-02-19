@@ -24,6 +24,7 @@ stop ftp server `sudo service vsftpd stop`
 get folders sizes `du -h --max-depth=1 | sort -hr`
 run sh script for all files in the folder `find . -iname '*.mp4' -exec sh ~/.config/sh/videoProcess.sh "{}" \`
 or `for file in *.jpg; do ffmpeg -i "$file" -vf scale=iw*.5:-1 "${file%.jpg}"_out.jpg ; done`
+unzip gz `tar -xvzf {{file}}`
 
 ### curl
 help `curl cheat.sh`
