@@ -52,36 +52,37 @@ set omnifunc=syntaxcomplete#Complete
 
 call plug#begin('~/.vim/plugged')
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'neomake/neomake'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'morhetz/gruvbox'
+Plug 'NikolayFrantsev/jshint2.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'tpope/vim-fugitive'
-Plug 'scrooloose/nerdcommenter'
-Plug 'rking/ag.vim', { 'on': 'Ag' }
 Plug 'cohama/agit.vim'
-Plug 'rakr/vim-one'
-Plug 'jiangmiao/auto-pairs'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'digitaltoad/vim-jade'
+Plug 'godlygeek/tabular'
 Plug 'heavenshell/vim-jsdoc'
-Plug 'pangloss/vim-javascript'
+Plug 'herringtondarkholme/yats.vim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/goyo.vim'
+Plug 'jwalton512/vim-blade'
+Plug 'kchmck/vim-coffee-script'
 Plug 'leafgarland/typescript-vim'
 Plug 'mattn/emmet-vim'
-Plug 'jwalton512/vim-blade'
-Plug 'mxw/vim-jsx'
-Plug 'kchmck/vim-coffee-script'
-Plug 'prettier/vim-prettier', { 'do': 'npm install' }
-Plug 'wavded/vim-stylus'
-Plug 'godlygeek/tabular'
-Plug 'yuttie/comfortable-motion.vim'
 Plug 'mbbill/undotree'
+Plug 'morhetz/gruvbox'
 Plug 'mustache/vim-mustache-handlebars'
-Plug 'NikolayFrantsev/jshint2.vim'
-Plug 'herringtondarkholme/yats.vim'
+Plug 'mxw/vim-jsx'
+Plug 'neomake/neomake'
+Plug 'pangloss/vim-javascript'
 Plug 'peitalin/vim-jsx-typescript'
-Plug 'digitaltoad/vim-jade'
-Plug 'junegunn/goyo.vim'
+Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+Plug 'rakr/vim-one'
+Plug 'rking/ag.vim', { 'on': 'Ag' }
+Plug 'scrooloose/nerdcommenter'
+Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'wavded/vim-stylus'
+Plug 'yuttie/comfortable-motion.vim'
 call plug#end()
 
 colorscheme gruvbox
@@ -139,6 +140,18 @@ command! E Explore
 
 "pangloss/vim-javascript config
 let g:javascript_plugin_jsdoc = 1
+
+"suan/vim-instant-markdown
+"let g:instant_markdown_slow = 1
+"let g:instant_markdown_autostart = 0
+"let g:instant_markdown_open_to_the_world = 1
+"let g:instant_markdown_allow_unsafe_content = 1
+"let g:instant_markdown_allow_external_content = 0
+"let g:instant_markdown_mathjax = 1
+"let g:instant_markdown_logfile = '/tmp/instant_markdown.log'
+"let g:instant_markdown_autoscroll = 0
+"let g:instant_markdown_port = 8888
+"let g:instant_markdown_python = 1
 
 "font settings
 let g:webdevicons_enable = 1
