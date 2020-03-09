@@ -244,6 +244,10 @@ bar {
   tray_output primary
   separator_symbol "  "
 
+  # disable mousewheel
+  bindsym button4 nop
+  bindsym button5 nop
+
   colors {
     separator $bg2
     background $bg0
