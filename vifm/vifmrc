@@ -198,7 +198,7 @@ filetype *.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus
        \ {Play using MPlayer}
        \ mplayer %f,
 fileviewer *.mp3 mp3info
-fileviewer *.wav ffplay -autoexit -nodisp -nostats -t 2 %c
+fileviewer *.wav ffplay -autoexit -nodisp -nostats -t 1 %c
 fileviewer *.flac soxi
 
 " Video

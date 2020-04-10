@@ -48,7 +48,8 @@ jpeg `jpegoptim -d ./compressed/ -m 80 -T 10% -P *.jpg`
 svg `cp *.svg compressed/ && svgo -r compressed/ -p 2 --multipass`
 
 ### ffmpeg
-get video from images `ffmpeg -framerate 24 -pattern_type glob -i '*.png' -i {{input}}.wav -acodec aac -b:a 192k -shortest -c:v libx264 -r 24 -pix_fmt yuv420p {{output}}.mp4`
+slice video to images `ffmpeg -i {{input}} -vsync 0 {{output}}-%d.png`
+merge video from images `ffmpeg -framerate 24 -pattern_type glob -i '*.png' -i {{input}}.wav -acodec aac -b:a 192k -shortest -c:v libx264 -r 24 -pix_fmt yuv420p {{output}}.mp4`
 convert wav to mp3 `ffmpeg -i {{input}}.wav -vn -ar 44100 -ac 2 -b:a 320k {{output}}.mp3`
 replace audio in video `ffmpeg -i {{input}}.mp4 -i {{input}}.wav -c:v copy -map 0:v:0 -map 1:a:0 -shortest {{output}}.mp4`
 split part of the video 1 `ffmpeg -ss 10 -t 40 -i {{input}} -vcodec copy -acodec copy {{output}}`
