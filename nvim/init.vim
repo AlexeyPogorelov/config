@@ -136,7 +136,8 @@ noremap <F3> :set list!<CR>
 noremap <F4> :set relativenumber!<CR>
 nnoremap <F5> :UndotreeToggle<CR>
 noremap <F6> :setlocal spell! spellang=en_us<CR>
-noremap <F12> :split term://$SHELL <BAR> startinsert<CR>
+noremap <F12> :tab new term://$SHELL <BAR> startinsert<CR>
+nnoremap <F12><F12> :split term://$SHELL <BAR> startinsert<CR>
 command! E Explore
 
 "pangloss/vim-javascript config
