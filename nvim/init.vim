@@ -128,17 +128,17 @@ let g:airline#extensions#tabline#show_buffers = 0
 set updatetime=100
 
 "key bindings
-tnoremap <ESC><ESC> <C-\><C-N>
-nnoremap <F1> :Goyo<CR>
-nnoremap <F2> :mksession! ~/session.vim<CR>
-nnoremap <F2><F2> :source ~/session.vim<CR>
-noremap <F3> :set list!<CR>
-noremap <F4> :set relativenumber!<CR>
-nnoremap <F5> :UndotreeToggle<CR>
-noremap <F6> :setlocal spell! spellang=en_us<CR>
-noremap <F12> :tab new term://$SHELL <BAR> startinsert<CR>
-nnoremap <F12><F12> :split term://$SHELL <BAR> startinsert<CR>
+map <ESC><ESC> <C-\><C-N>
+map <F1> :Goyo<CR>
+map <F2> :mksession! ~/session.vim<CR>
+map <F2><F2> :source ~/session.vim<CR>
+map <F3> :set list!<CR>
+map <F4> :set relativenumber!<CR>
+map <F5> :UndotreeToggle<CR>
+map <F12> :tab new term://$SHELL <BAR> startinsert<CR>
+map <F36> :split term://$SHELL <BAR> startinsert<CR>
 command! E Explore
+command! T :tab new term://$SHELL
 
 "pangloss/vim-javascript config
 let g:javascript_plugin_jsdoc = 1
