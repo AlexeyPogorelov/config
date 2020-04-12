@@ -51,6 +51,7 @@ if [[ $input == "i3" ]]; then
   bind_symlink $HOME_FOLDER/.config/.Xresources $HOME_FOLDER
   bind_symlink $HOME_FOLDER/.config/.Xdefaults $HOME_FOLDER
   bind_symlink $HOME_FOLDER/.config/.xinitrc $HOME_FOLDER
+  bind_symlink $HOME_FOLDER/.config/.bash_aliases $HOME_FOLDER
   bind_symlink $HOME_FOLDER/.config/_assets/bg.png $HOME_FOLDER/Pictures/
 
   mkdir -p $HOME_FOLDER/.fonts/Font-Awesome
