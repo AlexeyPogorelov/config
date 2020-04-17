@@ -5,7 +5,7 @@ xrdb -merge <(echo "Xft.dpi: 96")
 INTERNAL_OUTPUT="eDP1"
 
 # choices will be displayed in dmenu
-choices="laptop\ndual\nexternal\nclone"
+choices="laptop\nexternal\ndual\nclone\n720laptop\n720external"
 
 # Your choice in dmenu will determine what xrandr command to run
 chosen=$(echo -e $choices | dmenu -nb '#1d2021' -nf '#928374' -sb '#d79921' -sf '#1d2021' -fn 'monospace-20' -i -l 180 -p "DISPLAY")
@@ -26,6 +26,8 @@ case "$chosen" in
   laptop) xrandr --output $INTERNAL_OUTPUT --auto --primary --output $EXTERNAL_OUTPUT --off ;;
   clone) xrandr --output $INTERNAL_OUTPUT --auto --output $EXTERNAL_OUTPUT --auto --same-as $INTERNAL_OUTPUT ;;
   dual) xrandr --output $INTERNAL_OUTPUT --auto --output $EXTERNAL_OUTPUT --auto --right-of $INTERNAL_OUTPUT --primary ;;
+  720laptop) xrandr --output $INTERNAL_OUTPUT --mode 1280x720 --primary --output $EXTERNAL_OUTPUT --off ;;
+  720external) xrandr --output $INTERNAL_OUTPUT --mode 1280x720 --primary --output $EXTERNAL_OUTPUT --off ;;
 esac
 
 i3 reload

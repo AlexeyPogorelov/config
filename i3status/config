@@ -4,17 +4,17 @@ general {
         color_good = "#928374"
         color_degraded = "#fabd2f"
         color_bad = "#fb4934"
-        interval = 5
+        interval = 15
 }
 
-# order += "ipv6"
+# order += "cpu_usage"
 # order += "disk /"
+# order += "ethernet eth0"
+# order += "ipv6"
+# order += "load"
+# order += "path_exists VPN"
 # order += "run_watch DHCP"
 # order += "run_watch VPNC"
-# order += "path_exists VPN"
-# order += "ethernet eth0"
-# order += "load"
-# order += "cpu_usage"
 
 order += "wireless wlp2s0"
 order += "volume master"
@@ -93,7 +93,7 @@ load {
 
 cpu_temperature 0 {
   format = "%degrees °C"
-  path = "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp1_input"
+  path = "/sys/devices/platform/coretemp.0/hwmon/hwmon5/temp1_input"
 }
 
 disk "/" {

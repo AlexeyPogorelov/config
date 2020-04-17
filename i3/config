@@ -213,6 +213,7 @@ bindsym --release Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -
 bindsym --release $mod+x exec --no-startup-id gnome-terminal --full-screen -e cmatrix
 bindsym --release $mod+shift+x exec --no-startup-id gnome-terminal --full-screen -e 'tty-clock -c -b -B'
 bindsym --release $mod+shift+Escape exec --no-startup-id gnome-terminal --full-screen -e 'vtop -t gruvbox'
+bindsym --release $mod+Escape exec --no-startup-id gnome-terminal --full-screen -e 'htop'
 
 # background image
 exec_always compton --config ~/.config/compton.conf
@@ -240,6 +241,7 @@ bar {
   status_command ~/.config/i3status/custom-status.sh
   tray_output primary
   separator_symbol "  "
+  mode hide
 
   # disable mousewheel
   bindsym button4 nop
