@@ -87,6 +87,7 @@ Plug 'rking/ag.vim', { 'on': 'Ag' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 Plug 'tpope/vim-fugitive'
+Plug 'vifm/vifm.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'yuttie/comfortable-motion.vim'
@@ -141,7 +142,8 @@ map <F2> :mksession! ~/session.vim<CR>
 map <F2><F2> :source ~/session.vim<CR>
 map <F3> :set list!<CR>
 map <F4> :set relativenumber!<CR>
-map <F5> :UndotreeToggle<CR>
+map <F5> :EditVifm .<CR>
+map <F6> :UndotreeToggle<CR>
 map <F12> :tab new term://$SHELL <BAR> startinsert<CR>
 map <F36> :split term://$SHELL <BAR> startinsert<CR>
 command! E Explore
