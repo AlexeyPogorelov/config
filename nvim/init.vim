@@ -46,13 +46,23 @@ set nocompatible                " not compatible with vi
 set history=4000                " remember more commands and search history
 set undolevels=4000             " use many muchos levels of undo
 
-" Autocomplete
+" COC Autocomplete
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
+set shortmess+=c
+set signcolumn=yes
+
+let g:coc_global_extensions = [
+\ 'coc-html',
+\ 'coc-json',
+\ 'coc-tsserver',
+\ 'coc-css',
+\ 'coc-eslint',
+\ 'coc-snippets',
+\ 'coc-yank'
+\ ]
 
 call plug#begin('~/.vim/plugged')
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'NikolayFrantsev/jshint2.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/agit.vim'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -62,14 +72,12 @@ Plug 'heavenshell/vim-jsdoc'
 Plug 'herringtondarkholme/yats.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/goyo.vim'
-Plug 'jwalton512/vim-blade'
-Plug 'kchmck/vim-coffee-script'
 Plug 'leafgarland/typescript-vim'
 Plug 'mattn/emmet-vim'
 Plug 'mbbill/undotree'
 Plug 'morhetz/gruvbox'
-Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx'
+Plug 'neoclide/coc.nvim', {'do': { -> InitializeCoc() } }
 Plug 'neomake/neomake'
 Plug 'pangloss/vim-javascript'
 Plug 'peitalin/vim-jsx-typescript'
@@ -81,7 +89,6 @@ Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'wavded/vim-stylus'
 Plug 'yuttie/comfortable-motion.vim'
 call plug#end()
 
@@ -140,12 +147,53 @@ map <F36> :split term://$SHELL <BAR> startinsert<CR>
 command! E Explore
 command! T :tab new term://$SHELL
 
+" COC
+
+" tab to expand snippet
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+let g:coc_snippet_next = '<tab>'
+
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
+" position. Coc only does snippet and additional edit on confirm.
+if exists('*complete_info')
+  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+else
+  imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+endif
+
+" Use `[g` and `]g` to navigate diagnostics
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Apply AutoFix to problem on the current line.
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Add `:Format` command to format current buffer.
+command! -nargs=0 Format :call CocAction('format')<Paste>
+
 "pangloss/vim-javascript config
 let g:javascript_plugin_jsdoc = 1
 
 "suan/vim-instant-markdown
+let g:instant_markdown_autostart = 0
 "let g:instant_markdown_slow = 1
-"let g:instant_markdown_autostart = 0
 "let g:instant_markdown_open_to_the_world = 1
 "let g:instant_markdown_allow_unsafe_content = 1
 "let g:instant_markdown_allow_external_content = 0
