@@ -48,19 +48,15 @@ bindsym $mod+z kill
 # installed.
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -nb '$bg0' -sf '$bg0' -sb '$yellow1' -nf '$text0' -fn 'monospace-20' -l 45"
 bindsym $mod+shift+w exec --no-startup-id ~/.config/sh/external-display.sh
-bindsym $mod+shift+e exec --no-startup-id ~/.config/sh/exit-menu.sh
 bindsym $mod+t exec --no-startup-id ~/.config/sh/bt-menu.sh
 bindsym $mod+shift+t exec --no-startup-id "~/.config/sh/bt-menu.sh -d"
+# bindsym $mod+shift+e exec --no-startup-id ~/.config/sh/exit-menu.sh
 
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
 
 # move focused window
 bindsym $mod+Shift+h move left
@@ -136,16 +132,13 @@ bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 
 # classes and workspaces relations
-assign [class="Chromium"] $workspace2
+assign [class="Google-chrome"] $workspace2
 assign [class="Code"] $workspace3
 assign [class="REAPER"] $workspace3
 assign [class="Sublime_text"] $workspace3
 assign [class="Slack"] $workspace4
 assign [class="Skype"] $workspace4
-assign [class="Thunderbird"] $workspace4
 assign [class="Nautilus"] $workspace5
-assign [class="qjackctl"] $workspace9
-assign [class="Jack-rack"] $workspace9
 assign [class="Upwork"] $workspace9
 
 # rules for classes
@@ -184,8 +177,14 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-bindsym $mod+Left workspace prev
-bindsym $mod+Right workspace next
+# alternatively, you can use the cursor keys:
+bindsym $mod+Up resize shrink height 10 px or 10 ppt
+bindsym $mod+Right resize grow width 10 px or 10 ppt
+bindsym $mod+Down resize grow height 10 px or 10 ppt
+bindsym $mod+Left resize shrink width 10 px or 10 ppt
+
+bindsym $mod+Shift+Tab workspace prev
+bindsym $mod+Tab workspace next
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% # increase sound volume
@@ -223,7 +222,7 @@ exec_always --no-startup-id "setxkbmap -layout us,ru -option grp:alt_space_toggl
 # autorun
 exec i3-sensible-terminal
 
-# Widow Colours
+# Widow Colors
 # class                  border | backgr | text   | indicator | child_border
 client.focused           $bg2     $bg2     $text2   $bg2        $bg2
 client.focused_inactive  $bg0     $bg0     $text0   $bg0        $bg0
