@@ -132,10 +132,20 @@ let g:airline#extensions#tabline#show_buffers = 0
 " Neomake
 "autocmd! BufWritePost * Neomake
 
+" TODO use this function as a command
+fun! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfun
+" autocmd BufWritePre * :call TrimWhitespace()
+
 " Git config
 set updatetime=100
 
 "key bindings
+let mapleader = " "
+
 map <ESC><ESC> <C-\><C-N>
 map <F1> :Goyo<CR>
 map <F2> :mksession! ~/session.vim<CR>
@@ -148,6 +158,21 @@ map <F12> :tab new term://$SHELL <BAR> startinsert<CR>
 map <F36> :split term://$SHELL <BAR> startinsert<CR>
 command! E Explore
 command! T :tab new term://$SHELL
+
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
+nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
+nnoremap <leader>u :UndotreeShow<CR>
+nnoremap <Leader>> :vertical resize +25<CR>
+nnoremap <Leader>< :vertical resize -25<CR>
+
+nnoremap <leader>h :wincmd h<CR>
+nnoremap <leader>j :wincmd j<CR>
+nnoremap <leader>k :wincmd k<CR>
+nnoremap <leader>l :wincmd l<CR>
+nnoremap <leader>q :q<CR>
+
 
 " COC
 

@@ -19,4 +19,5 @@ chosen=$(echo -e $choices | dmenu -nb '#1d2021' -nf '#928374' -sb '#d79921' -sf 
 # pacmd "move-sink-input $app $index"
 # done
 
-echo "set-default-sink ${index}" | i3-msg
+set-default-sink $index
+

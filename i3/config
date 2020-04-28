@@ -50,7 +50,7 @@ bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -nb '$bg0
 bindsym $mod+shift+w exec --no-startup-id ~/.config/sh/external-display.sh
 bindsym $mod+t exec --no-startup-id ~/.config/sh/bt-menu.sh
 bindsym $mod+shift+t exec --no-startup-id "~/.config/sh/bt-menu.sh -d"
-# bindsym $mod+shift+e exec --no-startup-id ~/.config/sh/exit-menu.sh
+bindsym $mod+shift+e exec --no-startup-id ~/.config/sh/pulse-sink.sh
 
 # change focus
 bindsym $mod+h focus left
