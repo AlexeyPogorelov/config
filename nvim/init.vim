@@ -102,6 +102,7 @@ let g:user_emmet_install_global = 0
 autocmd FileType scss,sass,css EmmetInstall
 
 " ctrlp options
+let g:ctrlp_map = '<F3>'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)|(node_modules|dist|build)$',
@@ -129,9 +130,6 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 let g:airline#extensions#tabline#show_buffers = 0
 
-" Neomake
-"autocmd! BufWritePost * Neomake
-
 " TODO use this function as a command
 fun! TrimWhitespace()
     let l:save = winsaveview()
@@ -143,6 +141,12 @@ endfun
 " Git config
 set updatetime=100
 
+nnoremap g] <Plug>(GitGutterNextHunk)
+nnoremap g[ <Plug>(GitGutterPrevHunk)
+nnoremap gp <Plug>(GitGutterPreviewHunk)
+nnoremap gu <Plug>(GitGutterUndoHunk)
+nnoremap gs <Plug>(GitGutterStageHunk)
+
 "key bindings
 let mapleader = " "
 
@@ -150,7 +154,6 @@ map <ESC><ESC> <C-\><C-N>
 map <F1> :Goyo<CR>
 map <F2> :mksession! ~/session.vim<CR>
 map <F2><F2> :source ~/session.vim<CR>
-map <F3> :set list!<CR>
 map <F4> :set relativenumber!<CR>
 map <F5> :EditVifm .<CR>
 map <F6> :UndotreeToggle<CR>
@@ -161,18 +164,22 @@ command! T :tab new term://$SHELL
 
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+vmap <C-c> "+y<CR>
+vmap <C-x> "+d<CR>
+nmap <C-p> "+p<CR>
 
 nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 nnoremap <leader>u :UndotreeShow<CR>
 nnoremap <Leader>> :vertical resize +25<CR>
 nnoremap <Leader>< :vertical resize -25<CR>
+nnoremap <Leader>= :horizontal resize +25<CR>
+nnoremap <Leader>- :horizontal resize -25<CR>
 
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>q :q<CR>
-
 
 " COC
 
@@ -210,10 +217,10 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Apply AutoFix to problem on the current line.
-nmap <leader>qf  <Plug>(coc-fix-current)
+" nmap <leader>qf  <Plug>(coc-fix-current)
 
 " Add `:Format` command to format current buffer.
-command! -nargs=0 Format :call CocAction('format')<Paste>
+command! -nargs=0 Format :call CocAction('format')
 
 "pangloss/vim-javascript config
 let g:javascript_plugin_jsdoc = 1
