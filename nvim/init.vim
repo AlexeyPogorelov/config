@@ -78,7 +78,6 @@ Plug 'mbbill/undotree'
 Plug 'morhetz/gruvbox'
 Plug 'mxw/vim-jsx'
 Plug 'neoclide/coc.nvim', {'do': { -> InitializeCoc() } }
-Plug 'neomake/neomake'
 Plug 'pangloss/vim-javascript'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
@@ -150,6 +149,10 @@ nnoremap gs <Plug>(GitGutterStageHunk)
 "key bindings
 let mapleader = " "
 
+set mouse=a
+map <ScrollWheelUp> <C-Y>
+map <ScrollWheelDown> <C-E>
+
 map <ESC><ESC> <C-\><C-N>
 map <F1> :Goyo<CR>
 map <F2> :mksession! ~/session.vim<CR>
@@ -172,8 +175,8 @@ nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 nnoremap <leader>u :UndotreeShow<CR>
 nnoremap <Leader>> :vertical resize +25<CR>
 nnoremap <Leader>< :vertical resize -25<CR>
-nnoremap <Leader>= :horizontal resize +25<CR>
-nnoremap <Leader>- :horizontal resize -25<CR>
+nnoremap <Leader>= :resize +25<CR>
+nnoremap <Leader>- :resize -25<CR>
 
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
