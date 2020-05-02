@@ -1,10 +1,18 @@
+### SYSTEM
+restart service `sudo systemctl restart {{service}}`
+
+### PulseAudio
+use sink 1 as a default `pacmd set-default-sink 1`
+get inputs `pacmd list-sink-inputs`
+move input 5 to sink 1 `pacmd move-sink-input 5 1`
+
 ### WiFi
 turn on wifi `nmcli r wifi on`
 get list of wifi networks `nmcli d wifi list`
 connect to network `nmcli d wifi connect <ssid> password <password>`
 
 ### BlueTooth
-get to internal comand prompt `bluetoothctl`
+get to cli `bluetoothctl`
 some usteful commands `power on`, `agent on`, `default-agent`, `scan on`, `scan off`
 pait new device `pair <id>`
 connect paired device `connect <id>`
