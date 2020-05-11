@@ -77,7 +77,7 @@ Plug 'mattn/emmet-vim'
 Plug 'mbbill/undotree'
 Plug 'morhetz/gruvbox'
 Plug 'mxw/vim-jsx'
-Plug 'neoclide/coc.nvim', {'do': { -> InitializeCoc() } }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'pangloss/vim-javascript'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
