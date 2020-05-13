@@ -1,11 +1,6 @@
 ### SYSTEM
 restart service `sudo systemctl restart {{service}}`
 
-### PulseAudio
-use sink 1 as a default `pacmd set-default-sink 1`
-get inputs `pacmd list-sink-inputs`
-move input 5 to sink 1 `pacmd move-sink-input 5 1`
-
 ### WiFi
 turn on wifi `nmcli r wifi on`
 get list of wifi networks `nmcli d wifi list`
@@ -13,16 +8,19 @@ connect to network `nmcli d wifi connect <ssid> password <password>`
 
 ### BlueTooth
 get to cli `bluetoothctl`
-some usteful commands `power on`, `agent on`, `default-agent`, `scan on`, `scan off`
 pait new device `pair <id>`
 connect paired device `connect <id>`
+some usteful commands `power on`, `agent on`, `default-agent`, `scan on`, `scan off`
 
 ### Multiple displays
 move workspace to external display `i3 move workspace to right`
 
 ### Audio
+get inputs `pacmd list-sink-inputs`
 get list of available outputs `pacmd list-sources | grep -e device.string -e 'name:'`
+move input 5 to sink 1 `pacmd move-sink-input 5 1`
 set default audio output `echo 'set-default-source bluez_sink.00_42_79_B5_9B_A8.a2dp_sink.monitor' | pacmd`
+use sink 1 as a default `pacmd set-default-sink 1`
 
 ### FTP
 start ftp server `sudo service vsftpd start`
