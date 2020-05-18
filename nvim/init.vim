@@ -92,8 +92,18 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'yuttie/comfortable-motion.vim'
 call plug#end()
 
+let g:gruvbox_contrast_light='medium'
+let g:gruvbox_contrast_dark='soft'
 colorscheme gruvbox
 set background=dark
+
+function! ToggleScheme()
+    if (&background == "light")
+      set background=dark
+    else
+       set background=light
+    endif
+endfunction
 
 " Emmet options
 let g:user_emmet_leader_key=','
@@ -160,6 +170,7 @@ map <F2><F2> :source ~/session.vim<CR>
 map <F4> :set relativenumber!<CR>
 map <F5> :EditVifm .<CR>
 map <F6> :UndotreeToggle<CR>
+map <F11> :call ToggleScheme()<CR>
 map <F12> :tab new term://$SHELL <BAR> startinsert<CR>
 map <F36> :split term://$SHELL <BAR> startinsert<CR>
 command! E Explore
