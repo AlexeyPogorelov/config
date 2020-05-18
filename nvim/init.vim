@@ -92,7 +92,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'yuttie/comfortable-motion.vim'
 call plug#end()
 
-let g:gruvbox_contrast_light='medium'
+let g:gruvbox_contrast_light='hard'
 let g:gruvbox_contrast_dark='soft'
 colorscheme gruvbox
 set background=dark
