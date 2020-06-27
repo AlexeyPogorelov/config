@@ -64,6 +64,7 @@ capture screen video `ffmpeg -video_size 1920x1080 -f x11grab -i :0.0+100,200 -f
 capture screen image `ffmpeg -video_size 1920x1080 -f x11grab -i :0.0+100,200 -framerate 1 -vframes 1 {{output}}.jpg`
 video to GIF `ffmpeg -ss 00:00:06 -t 00:00:31 -i {{input}} -f gif -filter_complex "[0:v] fps=12,scale=w=480:h=-1,split [a][b];[a] palettegen=stats_mode=single [p];[b][p] paletteuse=new=1" {{output}}.gif`
 convert to VP9 `ffmpeg -i {{input}} -vf scale=1280:720 -c:v libvpx-vp9 -b:v 600K -b:a 128k -ac 1 -c:a libopus -cpu-used 0 -threads 8 {{output}}.webm`
+convert to h265 `ffmpeg -i {{input}} -c:v libx265 -crf 28 -c:a aac -b:a 128k -tag:v hvc1 {{output}}_h265.mp4`
 apply 3dlut to video `ffmpeg -i {{input}} -vf lut3d="file=<apsolute file path>" -c:a copy -threads 1 -s 1280x720 {{output}}`
 slowdown 4 times to target 30 fps `ffmpeg -i {{input}} -vf setpts=4*PTS -r 30 {{output}}`
 scale to ratio 2.4x1 `ffmpeg -i {{input}} -vf "scale=1920x800,setsar=1:1" {{output}}`

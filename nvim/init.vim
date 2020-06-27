@@ -119,6 +119,9 @@ let g:ctrlp_custom_ignore = {
   \ 'link': 'some_bad_symbolic_links',
   \ }
 
+" goyo options
+let g:goyo_width = 110
+
 "Netrw options
 let g:netrw_banner=0
 
@@ -193,7 +196,10 @@ nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
+
 nnoremap <leader>q :q<CR>
+nnoremap <leader>e :E<CR>
+nnoremap <leader>w :w<CR>
 
 " COC
 

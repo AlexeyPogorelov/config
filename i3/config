@@ -217,7 +217,7 @@ exec_always compton --config ~/.config/compton.conf
 exec_always feh --bg-fill ~/Pictures/bg.png
 
 # languages config
-exec_always --no-startup-id "setxkbmap -layout us,ru -option grp:alt_space_toggle -option 'caps:none'"
+exec_always --no-startup-id "setxkbmap -layout us,ru -option grp:alt_space_toggle -option 'caps:escape'"
 
 # autorun
 exec i3-sensible-terminal
