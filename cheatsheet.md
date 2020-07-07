@@ -82,6 +82,12 @@ download `scp username@host:{{input}} /directory`
 upload `scp {{input}} username@host:/directory`
 upload directory `scp -r {{local_directory}} username@host:/remote_directory`
 
+### swap file
+show active swap `swapon -s`
+disable swap `sudo swapoff /dev/sdXX`
+create swap file `sudo dd if=/dev/zero of=/swapfile bs=1024 count=16777216 && sudo chmod 600 /swapfile && sudo mkswap /swapfile`
+enable swap `sudo swapon /swapfile`
+
 ### fun
 watch star wars `telnet towel.blinkenlights.nl`
 
