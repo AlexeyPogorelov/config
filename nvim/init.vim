@@ -200,6 +200,7 @@ nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>e :E<CR>
 nnoremap <leader>w :w<CR>
+nnoremap <leader>n :noh<CR>
 
 " COC
 
