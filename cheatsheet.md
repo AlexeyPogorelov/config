@@ -11,6 +11,7 @@ get to cli `bluetoothctl`
 pait new device `pair <id>`
 connect paired device `connect <id>`
 some usteful commands `power on`, `agent on`, `default-agent`, `scan on`, `scan off`
+unblock the bluetooth `rfkill unblock all`
 
 ### Multiple displays
 move workspace to external display `i3 move workspace to right`
