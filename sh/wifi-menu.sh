@@ -1,0 +1,65 @@
+#!/bin/bash
+
+#WIFI Version 2.8
+
+WIFILE=~/.config/wifi/wifi.csv
+WIFACE=wlan0
+
+#ARG HANDLING
+if [ "$1" == "quit" ]
+then
+	exit 0
+elif [ "$1" == status ]
+then
+	CUR_ESSID=$(iwconfig $WIFACE|grep ESSID|awk '{print $4}'|sed s/ESSID://)
+	LINK_QUAL=$(iwconfig $WIFACE|grep Quality|awk '{print $2}'|sed -e "s/.*Quality=//")
+	CUR_IPADR=$(ifconfig $WIFACE|grep "inet addr"|sed -e "s/.*inet addr://"|sed -e "s/Bcast.*//")
+	echo $WIFACE: $CUR_ESSID $LINK_QUAL
+	echo $CUR_IPADR
+	exit 0
+elif [ "$#" == 1 ]
+then
+	PROFLE_NAME=$(cat $WIFILE|grep $1|awk -F, '{print $1}')
+else
+	$0 $(cat $WIFILE|awk -F, '{print $1}'|sed -e 's/ProfileName/quit/'|launcher dmenu -b)
+	exit 0
+fi
+
+#VARIABLE HANDLING
+ESSID_VALUE=$(grep $1 $WIFILE|awk -F, '{print $2}')
+WEP_KEY_VAL=$(grep $1 $WIFILE|awk -F, '{print $3}')
+WPA_KEY_LOC=$(grep $1 $WIFILE|awk -F, '{print $4}')
+
+#PROFILE HANDLING
+if [ $1 == $PROFLE_NAME ]
+then
+	echo "Profile match!"
+	ESSID=$ESSID_VALUE
+else
+	echo "Trying $1 for the essid. Are you sure your spelling is correct?"
+	echo "If you connect to this access point often, add the information in $WIFILE"
+	ESSID=$1
+fi
+
+#WEP HANDLING
+if [ -z $WEP_KEY_VAL ]
+then
+	echo "According to the profile, this AP has no WEP encryption."
+else
+	echo "Poor security is better than no security."
+	WEP="enc $WEP_KEY_VAL"
+fi
+
+sudo iwconfig $WIFACE mode managed essid $ESSID $WEP
+
+#WPA HANDLING
+if [ -z $WPA_KEY_LOC ]
+then
+	echo "According to the profile, this AP has no WPA encryption."
+else
+	sudo wpa_supplicant -i$WIFACE -c$WPA_KEY_LOC&
+fi
+
+sudo dhclient -r $WIFACE&>/dev/null
+sudo dhclient $WIFACE&>/dev/null
+
