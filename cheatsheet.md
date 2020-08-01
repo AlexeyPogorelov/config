@@ -70,6 +70,7 @@ apply 3dlut to video `ffmpeg -i {{input}} -vf lut3d="file=<apsolute file path>" 
 slowdown 4 times to target 30 fps `ffmpeg -i {{input}} -vf setpts=4*PTS -r 30 {{output}}`
 scale to ratio 2.4x1 `ffmpeg -i {{input}} -vf "scale=1920x800,setsar=1:1" {{output}}`
 half the size of the picture `ffmpeg -i {{input}} -vf "scale=iw*.5:ih*.5" {{output}}`
+join files `ffmpeg -f concat -safe 0 -i <(for f in ./*.mp4; do echo "file '$PWD/$f'"; done) -c copy {{output}}`
 
 ### show opened ports
 show all `sudo lsof -i`
