@@ -201,6 +201,8 @@ nnoremap <leader>q :q<CR>
 nnoremap <leader>e :E<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>n :noh<CR>
+nnoremap <leader>v :vsplit<CR>
+nnoremap <leader>t :tab split<bar> :E<CR>
 
 " COC
 
