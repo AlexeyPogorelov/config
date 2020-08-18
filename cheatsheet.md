@@ -79,6 +79,9 @@ show all `sudo lsof -i`
 run image `docker run -v $PWD:/temp/ -it --entrypoint='bash' jrottenberg/ffmpeg`
 start VSCode server `docker run -it -p 8080:8080 -v "${HOME}/.local/share/code-server:/home/coder/.local/share/code-server" -v "$PWD:/home/coder/project" codercom/code-server:v2`
 
+### SSH
+forward port `ssh -f -N -L 4000:localhost:4000 user@0.0.0.0`
+
 ### SCP
 download `scp username@host:{{input}} /directory`
 upload `scp {{input}} username@host:/directory`
