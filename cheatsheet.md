@@ -86,6 +86,11 @@ forward port `ssh -f -N -L 4000:localhost:4000 user@0.0.0.0`
 download `scp username@host:{{input}} /directory`
 upload `scp {{input}} username@host:/directory`
 upload directory `scp -r {{local_directory}} username@host:/remote_directory`
+download directory `scp -r username@host:/{{remote_directory}} {{local_directory}}`
+
+### rsync
+upload directory `rsync -av -e ssh --exclude="node_modules" {{local_directory}} username@host:{{remote_directory}}`
+download directory `rsync -rv --exclude="node_modules" username@host:{{remote_directory}} {{local_directory}}`
 
 ### swap file
 show active swap `swapon -s`
