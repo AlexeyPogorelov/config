@@ -98,6 +98,9 @@ disable swap `sudo swapoff /dev/sdXX`
 create swap file `sudo dd if=/dev/zero of=/swapfile bs=1024 count=16777216 && sudo chmod 600 /swapfile && sudo mkswap /swapfile`
 enable swap `sudo swapon /swapfile`
 
+### tempfs
+mount ram disk to the folder `mount -t tmpfs -o size=512m tmpfs /mnt/ramdisk`
+
 ### fun
 watch star wars `telnet towel.blinkenlights.nl`
 
