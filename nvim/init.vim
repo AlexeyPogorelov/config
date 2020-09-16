@@ -7,8 +7,8 @@ set t_Co=256
 syntax enable
 set sessionoptions-=options
 
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set scrolloff=4                 " keep 4 lines off the edges of the screen when scrolling
 set expandtab                   " splits tab to spaces
 set autoindent
@@ -110,6 +110,9 @@ let g:user_emmet_leader_key=','
 let g:user_emmet_install_global = 0
 autocmd FileType scss,sass,css EmmetInstall
 
+" GitGutter config
+let g:gitgutter_map_keys = 0
+
 " ctrlp options
 let g:ctrlp_map = '<F3>'
 let g:ctrlp_working_path_mode = 'ra'
@@ -152,12 +155,6 @@ endfun
 
 " Git config
 set updatetime=100
-
-nnoremap g] <Plug>(GitGutterNextHunk)
-nnoremap g[ <Plug>(GitGutterPrevHunk)
-nnoremap gp <Plug>(GitGutterPreviewHunk)
-nnoremap gu <Plug>(GitGutterUndoHunk)
-nnoremap gs <Plug>(GitGutterStageHunk)
 
 "key bindings
 let mapleader = " "
@@ -203,6 +200,12 @@ nnoremap <leader>w :w<CR>
 nnoremap <leader>n :noh<CR>
 nnoremap <leader>v :vsplit<CR>
 nnoremap <leader>t :tab split<bar> :E<CR>
+
+nnoremap <leader>] :GitGutterNextHunk<CR>
+nnoremap <leader>[ :GitGutterPrevHunk<CR>
+nnoremap <leader>p :GitGutterPreviewHunk<CR>
+" nnoremap gu <Plug>(GitGutterUndoHunk)
+" nnoremap gs <Plug>(GitGutterStageHunk)
 
 " COC
 
