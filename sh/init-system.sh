@@ -31,7 +31,6 @@ function bind_symlink {
 if [[ $input == "i3" ]]; then
   sudo apt update
   install_dependency curl
-  install_dependency "util-vserver"
   install_dependency "i3-wm"
   install_dependency "tty-clock"
   install_dependency "silversearcher-ag"
