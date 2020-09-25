@@ -164,6 +164,12 @@ bindsym $mod+Left resize shrink width 10 px or 10 ppt
 bindsym $mod+Shift+Tab workspace prev
 bindsym $mod+Tab workspace next
 
+# multi motitor setup and the workspaces
+bindsym $mod+Control+h move workspace to output left
+bindsym $mod+Control+l move workspace to output right
+bindsym $mod+Control+Left move workspace to output left
+bindsym $mod+Control+Right move workspace to output right
+
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% # increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% # decrease sound volume
