@@ -1,3 +1,5 @@
 [user]
 	email = c_alex@groupon.com
 	name = Alexey
+[core]
+	editor = nvim
