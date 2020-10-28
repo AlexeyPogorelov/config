@@ -1,5 +1,6 @@
 ### SYSTEM
 restart service `sudo systemctl restart {{service}}`
+update terminal output `watch -n 1 {{command}}`
 
 ### WiFi
 turn on wifi `nmcli r wifi on`
