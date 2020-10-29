@@ -1,6 +1,7 @@
 ### SYSTEM
 restart service `sudo systemctl restart {{service}}`
-update terminal output `watch -n 1 {{command}}`
+show CPU freq `sudo watch -n 1 "lscpu | grep CPU\ MHz"`
+run app with the memory limit `systemd-run --user --no-block -p MemoryHigh=1G {{app}}`
 
 ### WiFi
 turn on wifi `nmcli r wifi on`
