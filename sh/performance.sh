@@ -6,6 +6,6 @@ do
       done
       [ "$select" = "mute"  ] && killall -SIGUSR1 dunst
       [ "$select" = "unmute"  ] && killall -SIGUSR2 dunst
-      [ "$select" = "powersave"  ] && sudo cpupower frequency-set -g powersave
-      [ "$select" = "performance"  ] && sudo cpupower frequency-set -g performance
+      [ "$select" = "powersave"  ] && gnome-terminal -e "sudo cpupower frequency-set -g powersave"
+      [ "$select" = "performance"  ] && gnome-terminal -e "sudo cpupower frequency-set -g performance"
 

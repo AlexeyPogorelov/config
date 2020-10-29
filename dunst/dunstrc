@@ -29,7 +29,7 @@
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
     
-    geometry = "500x5-10-50"
+    geometry = "500x5+10-50"
     #          [{width}]x{height}[+/-{x}+/-{y}]
 
     # Show how many messages are currently hidden (because of geometry).
@@ -126,8 +126,8 @@
     #   %n  progress value if set without any extra characters
     #   %%  Literal %
     # Markup is allowed
-    # format = "<b>%s</b>\n%b\n\n%a\n%i"
-    format = "<b>%s</b>\n%b"
+    # format = "<b>%s</b>\n%b"
+    format = "<b>%s</b>\n%b\n\n%a\n%i"
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
