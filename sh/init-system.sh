@@ -44,6 +44,7 @@ if [[ $input == "i3" ]]; then
   install_dependency tmux
   install_dependency scrot
   install_dependency cmatrix
+  install_dependency dunst
 
   # bind symlinks
   bind_symlink $HOME_FOLDER/.config/tmux/.tmux.conf $HOME_FOLDER
