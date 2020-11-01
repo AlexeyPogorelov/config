@@ -6,7 +6,7 @@ do
       done
       [ "$select" = "cancel"  ] && exit 0
       [ "$select" = "logout"  ] && i3-msg exit
-      [ "$select" = "poweroff"  ] && sudo shutdown -h now 
-      [ "$select" = "reboot"  ] && sudo reboot
-      [ "$select" = "hibernate"  ] && sudo systemctl hibernate
+      [ "$select" = "poweroff"  ] && gnome-terminal -e "sudo shutdown -h now "
+      [ "$select" = "reboot"  ] && gnome-terminal -e "sudo reboot"
+      [ "$select" = "hibernate"  ] && gnome-terminal -e "sudo systemctl hibernate"
 
