@@ -40,7 +40,7 @@ set splitbelow                  " Split horizontal windows below to the current 
 set fileformats=unix,dos,mac    " Prefer Unix over Windows over OS 9 formats
 set wildmenu                    " enhanced command line completion
 set hidden                      " current buffer can be put into background
-set cmdheight=1                 " command bar height
+set cmdheight=2                 " command bar height
 set nocompatible                " not compatible with vi
 
 set history=4000                " remember more commands and search history
@@ -85,6 +85,7 @@ Plug 'rakr/vim-one'
 Plug 'rking/ag.vim', { 'on': 'Ag' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
+Plug 'szw/vim-maximizer'
 Plug 'tpope/vim-fugitive'
 Plug 'vifm/vifm.vim'
 Plug 'vim-airline/vim-airline'
@@ -185,8 +186,6 @@ nmap <C-p> "+p<CR>
 
 nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 nnoremap <leader>u :UndotreeShow<CR>
-nnoremap <C-right> :vertical resize +25<CR>
-nnoremap <C-left> :vertical resize -25<CR>
 nnoremap <C-up> :resize +5<CR>
 nnoremap <C-down> :resize -5<CR>
 
@@ -201,6 +200,7 @@ nnoremap <leader>w :w<CR>
 nnoremap <leader>n :noh<CR>
 nnoremap <leader>v :vsplit<CR>
 nnoremap <leader>t :tab split<bar> :E<CR>
+nnoremap <leader>o :MaximizerToggle<CR>
 
 nnoremap <leader>] :GitGutterNextHunk<CR>
 nnoremap <leader>[ :GitGutterPrevHunk<CR>
