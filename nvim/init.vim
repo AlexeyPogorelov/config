@@ -168,6 +168,7 @@ map <ESC><ESC> <C-\><C-N>
 map <F1> :Goyo<CR>
 map <F2> :mksession! ~/session.vim<CR>
 map <F2><F2> :source ~/session.vim<CR>
+map <F3> :CtrlP<CR>
 map <F4> :set relativenumber!<CR>
 map <F5> :EditVifm .<CR>
 map <F6> :UndotreeToggle<CR>
