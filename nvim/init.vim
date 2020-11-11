@@ -65,12 +65,12 @@ let g:coc_global_extensions = [
 call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/agit.vim'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'digitaltoad/vim-jade'
 Plug 'godlygeek/tabular'
 Plug 'heavenshell/vim-jsdoc'
 Plug 'herringtondarkholme/yats.vim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/goyo.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'mattn/emmet-vim'
@@ -113,15 +113,6 @@ autocmd FileType scss,sass,css EmmetInstall
 
 " GitGutter config
 let g:gitgutter_map_keys = 0
-
-" ctrlp options
-let g:ctrlp_map = '<F3>'
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)|(node_modules|dist|build)$',
-  \ 'file': '\v\.(exe|so|dll|zip)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
 
 " goyo options
 let g:goyo_width = 110
@@ -168,7 +159,6 @@ map <ESC><ESC> <C-\><C-N>
 map <F1> :Goyo<CR>
 map <F2> :mksession! ~/session.vim<CR>
 map <F2><F2> :source ~/session.vim<CR>
-map <F3> :CtrlP<CR>
 map <F4> :set relativenumber!<CR>
 map <F5> :EditVifm .<CR>
 map <F6> :UndotreeToggle<CR>
@@ -177,6 +167,7 @@ map <F12> :tab new term://$SHELL <BAR> startinsert<CR>
 map <F29> :!nautilus % &<CR>
 map <F36> :split term://$SHELL <BAR> startinsert<CR>
 command! E Explore
+command! F FZF
 command! T :tab new term://$SHELL
 
 vnoremap J :m '>+1<CR>gv=gv
@@ -270,5 +261,4 @@ let g:webdevicons_enable = 1
 let g:airline_powerline_fonts = 1
 let g:webdevicons_enable_airline_tabline = 1
 let g:webdevicons_enable_airline_statusline = 1
-let g:webdevicons_enable_ctrlp = 1
 
