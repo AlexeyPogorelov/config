@@ -24,6 +24,7 @@ get list of available outputs `pacmd list-sources | grep -e device.string -e 'na
 move input 5 to sink 1 `pacmd move-sink-input 5 1`
 set default audio output `echo 'set-default-source bluez_sink.00_42_79_B5_9B_A8.a2dp_sink.monitor' | pacmd`
 use sink 1 as a default `pacmd set-default-sink 1`
+play sound inside terminal `ffplay -autoexit -nodisp {{file}}`
 
 ### FTP
 start ftp server `sudo service vsftpd start`

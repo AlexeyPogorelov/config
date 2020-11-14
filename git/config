@@ -3,3 +3,5 @@
 	name = Alexey
 [core]
 	editor = nvim
+[diff]
+	tool = vimdiff
