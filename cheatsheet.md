@@ -96,6 +96,10 @@ download directory `scp -r username@host:/{{remote_directory}} {{local_directory
 upload directory `rsync -av -e ssh --exclude="node_modules" {{local_directory}} username@host:{{remote_directory}}`
 download directory `rsync -rv --exclude="node_modules" username@host:{{remote_directory}} {{local_directory}}`
 
+### GIT
+generate file `git diff > some-changes.patch`
+apply file `git apply /path/to/some-changes.patch`
+
 ### node
 share files via HTTP `npx http-server`
 get files via HTTP `npx upload-server`
