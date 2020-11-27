@@ -14,6 +14,8 @@ pait new device `pair <id>`
 connect paired device `connect <id>`
 some usteful commands `power on`, `agent on`, `default-agent`, `scan on`, `scan off`
 unblock the bluetooth `rfkill unblock all`
+use bluetooth mic `pacmd set-card-profile {{card_id}} headset_head_unit`
+set bluetooth to quality `pacmd set-card-profile {{card_id}} a2dp_sink`
 
 ### Multiple displays
 move workspace to external display `i3 move workspace to right`
@@ -93,8 +95,9 @@ upload directory `scp -r {{local_directory}} username@host:/remote_directory`
 download directory `scp -r username@host:/{{remote_directory}} {{local_directory}}`
 
 ### rsync
-upload directory `rsync -av -e ssh --exclude="node_modules" {{local_directory}} username@host:{{remote_directory}}`
-download directory `rsync -rv --exclude="node_modules" username@host:{{remote_directory}} {{local_directory}}`
+upload directory `rsync -av -e ssh --exclude="node_modules" {{local_directory}} {{username}}@{{host}}:{{remote_directory}}`
+download directory `rsync -rv --exclude="node_modules" {{username}}@{{host}}:{{remote_directory}} {{local_directory}}`
+non default port example `rsync -rvz -e 'ssh -p {{port}}' --progress {{username}}@{{host}}:{{remote_directory}} {{local_directory}}`
 
 ### GIT
 generate file `git diff > some-changes.patch`
@@ -102,6 +105,7 @@ apply file `git apply /path/to/some-changes.patch`
 
 ### node
 share files via HTTP `npx http-server`
+serve SPA build `npx live-server --port=8080 --entry-file=./index.html`
 get files via HTTP `npx upload-server`
 
 ### swap file
@@ -112,6 +116,7 @@ enable swap `sudo swapon /swapfile`
 
 ### tempfs
 mount ram disk to the folder `mount -t tmpfs -o size=512m tmpfs /mnt/ramdisk`
+mount ssh to nautilus `gio mount ssh://{{user}}@{{domain}}:{{port}}`
 
 ### fun
 watch star wars `telnet towel.blinkenlights.nl`
