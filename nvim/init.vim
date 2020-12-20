@@ -180,6 +180,8 @@ nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 nnoremap <leader>u :UndotreeShow<CR>
 nnoremap <C-up> :resize +5<CR>
 nnoremap <C-down> :resize -5<CR>
+nnoremap <C-left> :vertical resize -5<CR>
+nnoremap <C-right> :vertical resize +5<CR>
 
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
