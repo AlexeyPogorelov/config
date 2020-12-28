@@ -17,9 +17,6 @@ unblock the bluetooth `rfkill unblock all`
 use bluetooth mic `pacmd set-card-profile {{card_id}} headset_head_unit`
 set bluetooth to quality `pacmd set-card-profile {{card_id}} a2dp_sink`
 
-### Multiple displays
-move workspace to external display `i3 move workspace to right`
-
 ### Audio
 get inputs `pacmd list-sink-inputs`
 get list of available outputs `pacmd list-sources | grep -e device.string -e 'name:'`
