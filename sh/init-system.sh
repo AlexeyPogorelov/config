@@ -33,7 +33,6 @@ if [[ $input == "i3" ]]; then
   install_dependency curl
   install_dependency "i3-wm"
   install_dependency "tty-clock"
-  install_dependency "silversearcher-ag"
   install_dependency i3status
   install_dependency compton
   install_dependency xbacklight
@@ -52,7 +51,10 @@ if [[ $input == "i3" ]]; then
   bind_symlink $HOME_FOLDER/.config/.Xdefaults $HOME_FOLDER
   bind_symlink $HOME_FOLDER/.config/.xinitrc $HOME_FOLDER
   bind_symlink $HOME_FOLDER/.config/.bash_aliases $HOME_FOLDER
-  bind_symlink $HOME_FOLDER/.config/_assets/bg.png $HOME_FOLDER/Pictures/
+
+  if [[ -f $HOME_FOLDER/Pictures/ ]]; then
+    bind_symlink $HOME_FOLDER/.config/_assets/bg.png $HOME_FOLDER/Pictures/
+  fi
 
   mkdir -p $HOME_FOLDER/.fonts/Font-Awesome
   bind_symlink $HOME_FOLDER/.config/_assets/Font-Awesome $HOME_FOLDER/.fonts/Font-Awesome
