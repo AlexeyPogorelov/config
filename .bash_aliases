@@ -10,6 +10,6 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-alias vim='nvim .'
+alias vim='nvim'
 alias vi='nvim .'
 alias lg='lazygit'

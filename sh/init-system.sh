@@ -64,13 +64,14 @@ if [[ $input == "i3" ]]; then
   log_message "i3-wm, tmux and sxiv was installed"
 
 elif [[ $input == "vim" ]]; then
-  sudo add-apt-repository ppa:lazygit-team/release
+  sudo add-apt-repository ppa:lazygit-team/release -y
   sudo apt update
 
   install_dependency neovim
   install_dependency vifm
   install_dependency xclip
   install_dependency lazygit
+  install_dependency silversearcher-ag
 
   # install VimPlug
   sudo -u $SUDO_USER bash -c "curl -fLo $HOME_FOLDER/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
