@@ -114,6 +114,7 @@ enable swap `sudo swapon /swapfile`
 ### tempfs
 mount ram disk to the folder `mount -t tmpfs -o size=512m tmpfs /mnt/ramdisk`
 mount ssh to nautilus `gio mount ssh://{{user}}@{{domain}}:{{port}}`
+mount fat partition `mount /dev/{{drive}} {{mountPoint}} -o umask=000`
 
 ### fun
 watch star wars `telnet towel.blinkenlights.nl`
