@@ -59,7 +59,8 @@ let g:coc_global_extensions = [
 \ 'coc-css',
 \ 'coc-eslint',
 \ 'coc-snippets',
-\ 'coc-yank'
+\ 'coc-yank',
+\ 'coc-tabnine'
 \ ]
 
 call plug#begin('~/.vim/plugged')
