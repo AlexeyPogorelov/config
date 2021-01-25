@@ -84,6 +84,7 @@ start VSCode server `docker run -it -p 8080:8080 -v "${HOME}/.local/share/code-s
 ### SSH
 forward port `ssh -f -N -L 4000:localhost:4000 user@0.0.0.0`
 add GIT repo via ssh `git remote add origin ssh://user@host:1234/srv/git/example`
+use rsa file for repo `git config core.sshCommand "ssh -i ~/.ssh/id_rsa_example -F /dev/null"`
 
 ### SCP
 download `scp username@host:{{input}} /directory`
