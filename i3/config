@@ -223,7 +223,7 @@ bar {
   status_command i3status
   tray_output primary
   separator_symbol "  "
-  mode hide
+  mode dock
 
   # disable mousewheel
   bindsym button4 nop

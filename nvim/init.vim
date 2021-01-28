@@ -8,7 +8,7 @@ syntax enable
 set sessionoptions-=options
 
 set tabstop=4
-set shiftwidth=4
+set shiftwidth=2
 set scrolloff=4                 " keep 4 lines off the edges of the screen when scrolling
 set expandtab                   " splits tab to spaces
 set autoindent
