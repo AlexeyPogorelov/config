@@ -72,6 +72,7 @@ Plug 'heavenshell/vim-jsdoc'
 Plug 'herringtondarkholme/yats.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'mattn/emmet-vim'
@@ -149,6 +150,9 @@ endfun
 " Git config
 set updatetime=100
 
+" FZF
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
+
 "key bindings
 let mapleader = " "
 
@@ -168,7 +172,7 @@ map <F12> :tab new term://$SHELL <BAR> startinsert<CR>
 map <F29> :!nautilus % &<CR>
 map <F36> :split term://$SHELL <BAR> startinsert<CR>
 command! E Explore
-command! F FZF
+command! F GFiles
 command! T :tab new term://$SHELL
 
 vnoremap J :m '>+1<CR>gv=gv
