@@ -66,10 +66,7 @@ let g:coc_global_extensions = [
 call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/agit.vim'
-Plug 'digitaltoad/vim-jade'
 Plug 'godlygeek/tabular'
-Plug 'heavenshell/vim-jsdoc'
-Plug 'herringtondarkholme/yats.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -173,6 +170,7 @@ map <F29> :!nautilus % &<CR>
 map <F36> :split term://$SHELL <BAR> startinsert<CR>
 command! E Explore
 command! F GFiles
+command! P CocFix
 command! T :tab new term://$SHELL
 
 vnoremap J :m '>+1<CR>gv=gv
