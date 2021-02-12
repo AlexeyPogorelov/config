@@ -1,0 +1,6 @@
+{
+  "coc.preferences.hoverTarget": "echo",
+  "diagnostic.messageTarget": "echo",
+  "signature.target": "echo"
+}
+
