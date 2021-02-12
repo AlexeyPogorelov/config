@@ -67,6 +67,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/agit.vim'
 Plug 'godlygeek/tabular'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -83,7 +84,6 @@ Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'rakr/vim-one'
 Plug 'rking/ag.vim', { 'on': 'Ag' }
 Plug 'scrooloose/nerdcommenter'
-Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 Plug 'szw/vim-maximizer'
 Plug 'tpope/vim-fugitive'
 Plug 'vifm/vifm.vim'
@@ -245,21 +245,6 @@ nmap <silent> gr <Plug>(coc-references)
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
-
-"pangloss/vim-javascript config
-let g:javascript_plugin_jsdoc = 1
-
-"suan/vim-instant-markdown
-let g:instant_markdown_autostart = 0
-"let g:instant_markdown_slow = 1
-"let g:instant_markdown_open_to_the_world = 1
-"let g:instant_markdown_allow_unsafe_content = 1
-"let g:instant_markdown_allow_external_content = 0
-"let g:instant_markdown_mathjax = 1
-"let g:instant_markdown_logfile = '/tmp/instant_markdown.log'
-"let g:instant_markdown_autoscroll = 0
-"let g:instant_markdown_port = 8888
-"let g:instant_markdown_python = 1
 
 "font settings
 let g:webdevicons_enable = 1
