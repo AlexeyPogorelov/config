@@ -51,6 +51,9 @@ generate QR code `curl qrenco.de/this`
 set form comand line `xrdb -merge <(echo "Xft.dpi: 96")`
 load from file `xrdb ~/.Xresources`
 
+### multi monitor setup
+remove unplugged VIRTUAL displays `xrandr -s 0`
+
 ### compress images
 png lossy `cp *.png ./compressed/ && find ./compressed -iname "*.png" -exec pngquant --quality=35-80 --skip-if-larger -s1 --ext=.png --force {} +`
 png lossless `optipng -preserve -dir compressed/ -o7 -zm1-9 *.png`
