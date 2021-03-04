@@ -57,8 +57,9 @@ remove unplugged VIRTUAL displays `xrandr -s 0`
 ### compress images
 png lossy `cp *.png ./compressed/ && find ./compressed -iname "*.png" -exec pngquant --quality=35-80 --skip-if-larger -s1 --ext=.png --force {} +`
 png lossless `optipng -preserve -dir compressed/ -o7 -zm1-9 *.png`
-jpeg `jpegoptim -d ./compressed/ -m 80 -T 10% -P *.jpg`
+jpeg `cp *.jpg ./compressed/ && find -type f -iname "*.jpg" -exec jpegoptim --strip-all --all-progressive -pm75 {} \;`
 svg `cp *.svg compressed/ && svgo -r compressed/ -p 2 --multipass`
+convert to jpg and resize `mogrify -resize 650x365 -format jpg *.png`
 
 ### ffmpeg
 slice video to images `ffmpeg -i {{input}} -vsync 0 {{output}}-%d.png`
