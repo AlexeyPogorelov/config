@@ -40,8 +40,8 @@ unzip gz `tar -xvzf {{file}}`
 help `curl cheat.sh`
 my IP `curl ifconfig.co` or `curl wgetip.com`
 weather `curl wttr.in`
-share file `curl --upload-file [file] https://transfer.sh/[name]`
-generate QR code `curl qrenco.de/this`
+share file `curl --upload-file {{file}} https://transfer.sh/{{filename}}`
+generate QR code `curl qrenco.de/{{text}}`
 
 ### tmux change root folder
 `Ctrl`+`b` `:`
