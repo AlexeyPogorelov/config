@@ -69,6 +69,7 @@ elif [[ $input == "vim" ]]; then
   sudo add-apt-repository ppa:lazygit-team/release -y
   sudo apt update
 
+  install_dependency curl
   install_dependency neovim
   install_dependency vifm
   install_dependency xclip
