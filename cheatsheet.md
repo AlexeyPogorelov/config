@@ -92,6 +92,7 @@ add GIT repo via ssh `git remote add origin ssh://user@host:1234/srv/git/example
 use rsa file for repo `git config core.sshCommand "ssh -i ~/.ssh/id_rsa_example -F /dev/null"`
 
 ### SCP
+using port `scp -P 8022 username@host:{{input}} /directory`
 download `scp username@host:{{input}} /directory`
 upload `scp {{input}} username@host:/directory`
 upload directory `scp -r {{local_directory}} username@host:/remote_directory`

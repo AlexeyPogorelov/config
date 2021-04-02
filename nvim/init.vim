@@ -66,6 +66,7 @@ let g:coc_global_extensions = [
 call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/agit.vim'
+Plug 'digitaltoad/vim-pug'
 Plug 'godlygeek/tabular'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'jiangmiao/auto-pairs'
