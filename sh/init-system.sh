@@ -38,7 +38,7 @@ if [[ $input == "i3" ]]; then
   install_dependency xbacklight
   install_dependency feh
   install_dependency cowsay
-  install_dependency dmenu
+  install_dependency rofi
   install_dependency sxiv
   install_dependency tmux
   install_dependency scrot
