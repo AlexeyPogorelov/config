@@ -1,7 +1,7 @@
 rofi.left: 0
 rofi.top: 0
 rofi.color-enabled: true
-rofi.theme: gruvbox-dark-soft
+rofi.theme: gruvbox-dark-hard
 rofi.width: 96
 rofi.opacity: 99
 rofi.border: 2px

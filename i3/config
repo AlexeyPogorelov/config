@@ -45,7 +45,7 @@ bindsym $mod+z kill
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+space exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -nb '$bg0' -sf '$bg0' -sb '$yellow1' -nf '$text0' -fn 'monospace-20' -l 45"
+bindsym $mod+space exec --no-startup-id i3-dmenu-desktop --dmenu="rofi -show drun"
 bindsym $mod+shift+w exec --no-startup-id ~/.config/sh/external-display.sh
 bindsym $mod+t exec --no-startup-id ~/.config/sh/bt-menu.sh
 bindsym $mod+shift+t exec --no-startup-id "~/.config/sh/bt-menu.sh -d"
@@ -202,7 +202,7 @@ exec_always compton --config ~/.config/compton.conf
 exec_always feh --bg-fill ~/Pictures/bg.png
 
 # languages config
-exec_always --no-startup-id "setxkbmap -layout us,ru -option grp:alt_space_toggle -option 'caps:escape'"
+exec_always --no-startup-id "setxkbmap -layout us,ru -option grp:caps_toggle"
 
 # autorun
 exec i3-sensible-terminal
