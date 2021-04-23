@@ -81,7 +81,6 @@ Plug 'mxw/vim-jsx'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'pangloss/vim-javascript'
 Plug 'peitalin/vim-jsx-typescript'
-Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'rakr/vim-one'
 Plug 'rking/ag.vim', { 'on': 'Ag' }
 Plug 'scrooloose/nerdcommenter'
@@ -91,6 +90,10 @@ Plug 'vifm/vifm.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'yuttie/comfortable-motion.vim'
+" post install (yarn install | npm install) then load plugin only for editing supported files
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 call plug#end()
 
 let g:gruvbox_contrast_light='hard'
