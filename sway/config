@@ -1,0 +1,256 @@
+# i3 config file (v4)
+
+# THEME
+set $bg0      #1d2021
+set $bg1      #282828
+set $bg2      #32302f
+set $text0    #928374
+set $text1    #a89984
+set $text2    #ebdbb2
+set $white    #ffffff
+set $red1     #cc241d
+set $red2     #fb4934
+set $yellow1  #d79921
+set $yellow2  #fabd2f
+set $green1   #98971a
+set $green2   #b8bb26
+set $blue1    #458588
+set $blue2    #83a598
+set $magenta1 #b16286
+set $magenta2 #d3869b
+
+set $mod Mod4
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango:monospace 16
+
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+#font pango:DejaVu Sans Mono 8
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Shift+Return exec "gnome-terminal"
+
+# kill focused window
+bindsym $mod+Escape kill
+bindsym $mod+z kill
+
+# start dmenu (a program launcher)
+# There also is the (new) i3-dmenu-desktop which only displays applications
+# shipping a .desktop file. It is a wrapper around dmenu, so you need that
+# installed.
+bindsym $mod+space exec --no-startup-id "wofi -show drun"
+bindsym $mod+shift+w exec --no-startup-id ~/.config/sh/external-display.sh
+bindsym $mod+t exec --no-startup-id ~/.config/sh/bt-menu.sh
+bindsym $mod+shift+t exec --no-startup-id "~/.config/sh/bt-menu.sh -d"
+bindsym $mod+shift+e exec --no-startup-id ~/.config/sh/pulse-sink.sh
+bindsym $mod+shift+c exec --no-startup-id ~/.config/sh/exit-menu.sh
+bindsym $mod+shift+p exec --no-startup-id ~/.config/sh/performance.sh
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+o split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+# bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle sticky
+bindsym $mod+r sticky toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+s focus mode_toggle
+
+# toggle tiling / floating
+bindsym $mod+Shift+s floating toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+set $workspace1 "1 "
+set $workspace2 "2 "
+set $workspace3 "3 "
+set $workspace4 "4 "
+set $workspace5 "5 "
+set $workspace6 "6 "
+set $workspace7 "7"
+set $workspace8 "8 "
+set $workspace9 "9 "
+set $workspace10 "0 "
+
+# switch to workspace
+bindsym $mod+1 workspace $workspace1
+bindsym $mod+2 workspace $workspace2
+bindsym $mod+3 workspace $workspace3
+bindsym $mod+4 workspace $workspace4
+bindsym $mod+5 workspace $workspace5
+bindsym $mod+6 workspace $workspace6
+bindsym $mod+7 workspace $workspace7
+bindsym $mod+8 workspace $workspace8
+bindsym $mod+9 workspace $workspace9
+bindsym $mod+0 workspace $workspace10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $workspace1
+bindsym $mod+Shift+2 move container to workspace $workspace2
+bindsym $mod+Shift+3 move container to workspace $workspace3
+bindsym $mod+Shift+4 move container to workspace $workspace4
+bindsym $mod+Shift+5 move container to workspace $workspace5
+bindsym $mod+Shift+6 move container to workspace $workspace6
+bindsym $mod+Shift+7 move container to workspace $workspace7
+bindsym $mod+Shift+8 move container to workspace $workspace8
+bindsym $mod+Shift+9 move container to workspace $workspace9
+bindsym $mod+Shift+0 move container to workspace $workspace10
+
+# classes and workspaces relations
+# assign [class="Google-chrome"] $workspace2
+# assign [class="Code"] $workspace3
+# assign [class="REAPER"] $workspace3
+# assign [class="Sublime_text"] $workspace3
+# assign [class="Slack"] $workspace4
+# assign [class="Skype"] $workspace4
+
+# rules for classes
+# for_window [class="REAPER"] floating disable
+for_window [class="vlc"] sticky enable
+
+# reload the configuration file
+# bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Up resize shrink height 10 px or 10 ppt
+bindsym $mod+Right resize grow width 10 px or 10 ppt
+bindsym $mod+Down resize grow height 10 px or 10 ppt
+bindsym $mod+Left resize shrink width 10 px or 10 ppt
+
+bindsym $mod+Shift+Tab workspace prev
+bindsym $mod+Tab workspace next
+
+# multi motitor setup and the workspaces
+bindsym $mod+Control+h move workspace to output left
+bindsym $mod+Control+l move workspace to output right
+bindsym $mod+Control+Left move workspace to output left
+bindsym $mod+Control+Right move workspace to output right
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% # increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% # decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle       # mute sound
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5   # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+# full-screen screenshots with scrot
+bindsym --release Control+Print exec scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`'
+
+# area selection screenshots
+bindsym --release Print exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`'
+
+# lock screen
+bindsym --release $mod+q exec --no-startup-id gnome-terminal --full-screen -e cmatrix
+bindsym --release $mod+shift+q exec --no-startup-id gnome-terminal --full-screen -e 'tty-clock -c -b -B'
+bindsym --release $mod+shift+Escape exec --no-startup-id gnome-terminal --full-screen -e 'vtop -t gruvbox'
+
+# background image
+exec_always compton --config ~/.config/compton.conf
+exec_always feh --bg-fill ~/Pictures/bg.png
+
+# languages config
+exec_always --no-startup-id "setxkbmap -layout us,ru -option grp:caps_toggle"
+
+### Input configuration
+# You can get the names of your inputs by running: swaymsg -t get_inputs
+# Read `man 5 sway-input` for more information about this section.
+
+input "2:14:SynPS/2_Synaptics_TouchPad" {
+    dwt enabled
+    tap enabled
+    natural_scroll enabled
+    middle_emulation enabled
+}
+
+# autorun
+exec gnome-terminal
+
+# Widow Colors
+# class                  border | backgr | text   | indicator | child_border
+client.focused           $bg2     $bg2     $text2   $bg2        $bg2
+client.focused_inactive  $bg0     $bg0     $text0   $bg0        $bg0
+client.unfocused         $bg0     $bg0     $bg2     $bg0        $bg0
+client.urgent            $red1    $red1    $white   $red1       $red1
+default_border none
+bindsym $mod+b border toggle 6
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+  # status_command ~/.config/i3status/custom-status.sh
+  status_command i3status
+  tray_output primary
+  separator_symbol "  "
+  mode dock
+
+  # disable mousewheel
+  bindsym button4 nop
+  bindsym button5 nop
+
+  colors {
+    separator $bg2
+    background $bg0
+    statusline $text0
+
+    # workspaces section
+    # class             border | background | text
+    focused_workspace   $text0   $text1       $bg0
+    active_workspace    $bg2     $bg2         $white
+    inactive_workspace  $bg0     $bg0         $text0
+    urgent_workspace    $red1    $red2        $white
+  }
+}
+
+# Toggle between dock mode and hide mode
+bindsym $mod+Shift+b bar mode toggle
+
