@@ -45,7 +45,7 @@ bindsym $mod+z kill
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+space exec --no-startup-id "wofi -show drun"
+bindsym $mod+space exec --no-startup-id "wofi --show drun"
 bindsym $mod+shift+w exec --no-startup-id ~/.config/sh/external-display.sh
 bindsym $mod+t exec --no-startup-id ~/.config/sh/bt-menu.sh
 bindsym $mod+shift+t exec --no-startup-id "~/.config/sh/bt-menu.sh -d"
@@ -148,7 +148,7 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 for_window [class="vlc"] sticky enable
 
 # reload the configuration file
-bindsym $mod+r reload
+bindsym $mod+Shift+y reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
@@ -205,8 +205,7 @@ exec_always --no-startup-id "setxkbmap -layout us,ru -option grp:caps_toggle"
 ### Input configuration
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
-
-input "2:14:SynPS/2_Synaptics_TouchPad" {
+input "1452:589:bcm5974" {
     dwt enabled
     tap enabled
     natural_scroll enabled
