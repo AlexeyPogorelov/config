@@ -1,7 +1,16 @@
 [user]
-	email = c_alex@groupon.com
-	name = Alexey
+	email = oleksii.pohorielov@dowjones.com
+	name = Oleksii Pohorielov
 [core]
 	editor = nvim
 [diff]
 	tool = vimdiff
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[difftool]
+	prompt = false
+[alias]
+	d = difftool
