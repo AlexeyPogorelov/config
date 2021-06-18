@@ -127,6 +127,12 @@ mount ssh to nautilus `gio mount ssh://{{user}}@{{domain}}:{{port}}`
 mount fat partition with all permissions `mount /dev/{{drive}} {{mountPoint}} -o umask=000`
 mount fat using options `mount -t vfat /dev/{{drive}} {{mountPoint}} -o rw,uid=xxx,gid=xxx`
 
+### permissions
+create group `addgroup {{group}}`
+allow group `chmod 750 /usr/bin/{{bin}}`
+make own by group `chown root:{{group}} /usr/bin/{{bin}}`
+add user to group `adduser {{user}} {{group}}`
+
 ### fun
 watch star wars `telnet towel.blinkenlights.nl`
 
