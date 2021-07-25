@@ -5,6 +5,7 @@ battery saver `auto-cpufreq --live`
 run app with the memory limit `systemd-run --user --no-block -p MemoryHigh=1G {{app}}`
 use old iris graphic driver `export MESA_LOADER_DRIVER_OVERRIDE=i965`
 mount sdcrd `sudo mount /dev/mmcblk0p1 /media/alex && sudo mount -o remount,rw /dev/mmcblk0p1 /media/alex`
+free disk space `df -BM`
 
 ### WiFi
 turn on wifi `nmcli r wifi on`
