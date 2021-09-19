@@ -13,3 +13,6 @@ alias egrep='egrep --color=auto'
 alias vim='nvim'
 alias vi='nvim .'
 alias lg='lazygit'
+
+alias gl='git log --pretty=oneline --graph --decorate --all'
+
