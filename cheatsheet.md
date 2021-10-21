@@ -1,3 +1,6 @@
+### ISSUES
+restart pipewire `systemctl --user restart pipewire.service pipewire-pulse.socket`
+
 ### SYSTEM
 restart service `sudo systemctl restart {{service}}`
 show CPU freq `sudo watch -n 1 "lscpu | grep CPU\ MHz"`
