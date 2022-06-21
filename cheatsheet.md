@@ -113,6 +113,7 @@ non default port example `rsync -rvz -e 'ssh -p {{port}}' --progress {{username}
 ### GIT
 generate file `git diff > some-changes.patch`
 apply file `git apply /path/to/some-changes.patch`
+get file from the different branch `git show {{branch}}:{{file}} > {{file}}`
 
 ### node
 share files via HTTP `npx http-server`
