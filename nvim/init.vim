@@ -63,17 +63,17 @@ let g:coc_global_extensions = [
 \ ]
 
 call plug#begin('~/.vim/plugged')
+" Plug 'digitaltoad/vim-pug'
+" Plug 'godlygeek/tabular'
+" Plug 'junegunn/goyo.vim'
+" Plug 'mattn/emmet-vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/agit.vim'
-Plug 'digitaltoad/vim-pug'
-Plug 'godlygeek/tabular'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/goyo.vim'
 Plug 'leafgarland/typescript-vim'
-Plug 'mattn/emmet-vim'
 Plug 'mbbill/undotree'
 Plug 'morhetz/gruvbox'
 Plug 'mxw/vim-jsx'
