@@ -14,5 +14,7 @@ alias vim='nvim'
 alias vi='nvim .'
 alias lg='lazygit'
 
+alias ta='tmux attach'
+
 alias gl='git log --pretty=oneline --graph --decorate --all'
 

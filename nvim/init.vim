@@ -160,12 +160,11 @@ set mouse=a
 map <ScrollWheelUp> <C-Y>
 map <ScrollWheelDown> <C-E>
 
-map <ESC><ESC> <C-\><C-N>
 map <F1> :Goyo<CR>
 map <F2> :mksession! ~/session.vim<CR>
 map <F2><F2> :source ~/session.vim<CR>
 map <F4> :set relativenumber!<CR>
-map <F5> :EditVifm .<CR>
+map <F5> :EditVifm %<CR>
 map <F6> :UndotreeToggle<CR>
 map <F11> :call ToggleScheme()<CR>
 map <F12> :tab new term://$SHELL <BAR> startinsert<CR>
@@ -175,6 +174,7 @@ command! E Explore
 command! F GFiles
 command! P CocFix
 command! T :tab new term://$SHELL
+tnoremap <ESC><ESC> <C-\><C-N>
 
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
@@ -205,8 +205,8 @@ nnoremap <leader>o :MaximizerToggle<CR>
 nnoremap <leader>] :GitGutterNextHunk<CR>
 nnoremap <leader>[ :GitGutterPrevHunk<CR>
 nnoremap <leader>p :GitGutterPreviewHunk<CR>
-" nnoremap gu <Plug>(GitGutterUndoHunk)
-" nnoremap gs <Plug>(GitGutterStageHunk)
+nnoremap <leader>pu :GitGutterUndoHunk<CR>
+nnoremap <leader>ps :GitGutterStageHunk<CR>
 
 " COC
 
