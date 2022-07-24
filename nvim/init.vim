@@ -166,6 +166,8 @@ map <F2><F2> :source ~/session.vim<CR>
 map <F4> :set relativenumber!<CR>
 map <F5> :EditVifm %<CR>
 map <F6> :UndotreeToggle<CR>
+map <F7> :Gvdiffsplit<CR>
+map <F8> :Gvdiffsplit!<CR>
 map <F11> :call ToggleScheme()<CR>
 map <F12> :tab new term://$SHELL <BAR> startinsert<CR>
 map <F29> :!nautilus % &<CR>
