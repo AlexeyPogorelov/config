@@ -63,10 +63,6 @@ let g:coc_global_extensions = [
 \ ]
 
 call plug#begin('~/.vim/plugged')
-" Plug 'digitaltoad/vim-pug'
-" Plug 'godlygeek/tabular'
-" Plug 'junegunn/goyo.vim'
-" Plug 'mattn/emmet-vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/agit.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
@@ -89,10 +85,7 @@ Plug 'vifm/vifm.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'yuttie/comfortable-motion.vim'
-" post install (yarn install | npm install) then load plugin only for editing supported files
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 call plug#end()
 
 let g:gruvbox_contrast_light='hard'
@@ -151,7 +144,7 @@ endfun
 set updatetime=100
 
 " FZF
-let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
+let g:fzf_layout = { 'window': { 'width': 0.95, 'height': 0.95 } }
 
 "key bindings
 let mapleader = " "
@@ -160,7 +153,7 @@ set mouse=a
 map <ScrollWheelUp> <C-Y>
 map <ScrollWheelDown> <C-E>
 
-map <F1> :Goyo<CR>
+map <F1> :split term://$SHELL <BAR> startinsert<CR>
 map <F2> :mksession! ~/session.vim<CR>
 map <F2><F2> :source ~/session.vim<CR>
 map <F4> :set relativenumber!<CR>
@@ -172,11 +165,13 @@ map <F11> :call ToggleScheme()<CR>
 map <F12> :tab new term://$SHELL <BAR> startinsert<CR>
 map <F29> :!nautilus % &<CR>
 map <F36> :split term://$SHELL <BAR> startinsert<CR>
+command! B Buffers
 command! E Explore
 command! F GFiles
 command! P CocFix
 command! T :tab new term://$SHELL
-tnoremap <ESC><ESC> <C-\><C-N>
+tnoremap <ESC><ESC> <ESC>
+tnoremap <C-[> <C-\><C-n>
 nmap <Leader>i <Plug>(Prettier)
 
 vnoremap J :m '>+1<CR>gv=gv
@@ -184,6 +179,22 @@ vnoremap K :m '<-2<CR>gv=gv
 vmap <C-c> "+y<CR>
 vmap <C-x> "+d<CR>
 nmap <C-p> "+p<CR>
+nnoremap <C-s> :w<CR>
+inoremap <C-s> <Esc>:w<CR>a
+vnoremap <C-s> <Esc>:w<CR>
+
+tnoremap <A-h> <C-\><C-N><C-w>h
+tnoremap <A-j> <C-\><C-N><C-w>j
+tnoremap <A-k> <C-\><C-N><C-w>k
+tnoremap <A-l> <C-\><C-N><C-w>l
+inoremap <A-h> <C-\><C-N><C-w>h
+inoremap <A-j> <C-\><C-N><C-w>j
+inoremap <A-k> <C-\><C-N><C-w>k
+inoremap <A-l> <C-\><C-N><C-w>l
+nnoremap <A-h> <C-w>h
+nnoremap <A-j> <C-w>j
+nnoremap <A-k> <C-w>k
+nnoremap <A-l> <C-w>l
 
 nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 nnoremap <leader>u :UndotreeShow<CR>
@@ -210,6 +221,11 @@ nnoremap <leader>[ :GitGutterPrevHunk<CR>
 nnoremap <leader>p :GitGutterPreviewHunk<CR>
 nnoremap <leader>pu :GitGutterUndoHunk<CR>
 nnoremap <leader>ps :GitGutterStageHunk<CR>
+
+nnoremap <leader>b :Buffers<CR>
+
+" Apply AutoFix to problem on the current line.
+nnoremap <leader>pf  <Plug>(coc-fix-current)
 
 " COC
 
@@ -245,9 +261,6 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-
-" Apply AutoFix to problem on the current line.
-" nmap <leader>qf  <Plug>(coc-fix-current)
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
