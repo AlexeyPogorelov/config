@@ -45,6 +45,7 @@ set nocompatible                " not compatible with vi
 
 set history=4000                " remember more commands and search history
 set undolevels=4000             " use many muchos levels of undo
+set timeoutlen=500
 
 " COC Autocomplete
 filetype plugin on
@@ -153,6 +154,7 @@ set mouse=a
 map <ScrollWheelUp> <C-Y>
 map <ScrollWheelDown> <C-E>
 
+" map <F1> :call Test()<CR>
 map <F1> :split term://$SHELL <BAR> startinsert<CR>
 map <F2> :mksession! ~/session.vim<CR>
 map <F2><F2> :source ~/session.vim<CR>
@@ -269,4 +271,13 @@ command! -nargs=0 Format :call CocAction('format')
 let g:webdevicons_enable = 1
 let g:webdevicons_enable_airline_tabline = 1
 let g:webdevicons_enable_airline_statusline = 1
+
+function! Test()
+  :echo(filter(range(1, bufnr('$')), 'bufexists(v:val)'))
+" if (&background == "light")
+"   set background=dark
+" else
+"    set background=light
+" endif
+endfunction
 
