@@ -6,6 +6,7 @@ restart service `sudo systemctl restart {{service}}`
 show CPU freq `sudo watch -n 1 "lscpu | grep CPU\ MHz"`
 battery saver `auto-cpufreq --live`
 run app with the memory limit `systemd-run --user --no-block -p MemoryHigh=1G {{app}}`
+run app with the memory limit `systemd-run --scope -p MemoryMax=500M --user {{app}}`
 use old iris graphic driver `export MESA_LOADER_DRIVER_OVERRIDE=i965`
 mount sdcrd `sudo mount /dev/mmcblk0p1 /media/alex && sudo mount -o remount,rw /dev/mmcblk0p1 /media/alex`
 free disk space `df -BM`
@@ -97,6 +98,7 @@ start VSCode server `docker run -it -p 8080:8080 -v "${HOME}/.local/share/code-s
 forward port `ssh -f -N -L 4000:localhost:4000 user@0.0.0.0`
 add GIT repo via ssh `git remote add origin ssh://user@host:1234/srv/git/example`
 use rsa file for repo `git config core.sshCommand "ssh -i ~/.ssh/id_rsa_example -F /dev/null"`
+run app as user to keep it after logout `systemd-run --scope --user tmux`
 
 ### SCP
 using port `scp -P 8022 username@host:{{input}} /directory`
