@@ -90,7 +90,7 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install', 'for': ['javascript', 'typ
 call plug#end()
 
 let g:gruvbox_contrast_light='hard'
-let g:gruvbox_contrast_dark='soft'
+let g:gruvbox_contrast_dark='medium'
 colorscheme gruvbox
 set background=dark
 
@@ -102,16 +102,8 @@ function! ToggleScheme()
     endif
 endfunction
 
-" Emmet options
-let g:user_emmet_leader_key=','
-let g:user_emmet_install_global = 0
-autocmd FileType scss,sass,css EmmetInstall
-
 " GitGutter config
 let g:gitgutter_map_keys = 0
-
-" goyo options
-let g:goyo_width = 110
 
 "Netrw options
 let g:netrw_banner=0
@@ -158,6 +150,7 @@ map <ScrollWheelDown> <C-E>
 map <F1> :split term://$SHELL <BAR> startinsert<CR>
 map <F2> :mksession! ~/session.vim<CR>
 map <F2><F2> :source ~/session.vim<CR>
+map <F3> :buffers<CR>:buffer<Space>
 map <F4> :set relativenumber!<CR>
 map <F5> :EditVifm %<CR>
 map <F6> :UndotreeToggle<CR>
@@ -216,6 +209,7 @@ nnoremap <leader>w :w<CR>
 nnoremap <leader>n :noh<CR>
 nnoremap <leader>v :vsplit<CR>
 nnoremap <leader>t :tab split<bar> :E<CR>
+nnoremap <leader>s :tab split<CR>
 nnoremap <leader>o :MaximizerToggle<CR>
 
 nnoremap <leader>] :GitGutterNextHunk<CR>
@@ -273,11 +267,30 @@ let g:webdevicons_enable_airline_tabline = 1
 let g:webdevicons_enable_airline_statusline = 1
 
 function! Test()
-  :echo(filter(range(1, bufnr('$')), 'bufexists(v:val)'))
-" if (&background == "light")
-"   set background=dark
-" else
-"    set background=light
-" endif
+  let bufcount = bufnr("$")
+  let currbufnr = 1
+  let nummatches = 0
+  let firstmatchingbufnr = 0
+  while currbufnr <= bufcount
+    if(bufexists(currbufnr))
+      let currbufname = bufname(currbufnr)
+      if(match(currbufname, a:pattern) > -1)
+        echo currbufnr . ": ". bufname(currbufnr)
+        let nummatches += 1
+        let firstmatchingbufnr = currbufnr
+      endif
+    endif
+    let currbufnr = currbufnr + 1
+  endwhile
+  if(nummatches == 1)
+    execute ":buffer ". firstmatchingbufnr
+  elseif(nummatches > 1)
+    let desiredbufnr = input("Enter buffer number: ")
+    if(strlen(desiredbufnr) != 0)
+      execute ":buffer ". desiredbufnr
+    endif
+  else
+    echo "No matching buffers"
+  endif
 endfunction
 
