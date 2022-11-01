@@ -8,7 +8,7 @@ syntax enable
 set sessionoptions-=options
 
 set tabstop=4
-set shiftwidth=2
+set shiftwidth=4
 set scrolloff=4                 " keep 4 lines off the edges of the screen when scrolling
 set expandtab                   " splits tab to spaces
 set autoindent
@@ -75,11 +75,13 @@ Plug 'mbbill/undotree'
 Plug 'morhetz/gruvbox'
 Plug 'mxw/vim-jsx'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'nvim-lua/plenary.nvim'
 Plug 'pangloss/vim-javascript'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'rakr/vim-one'
 Plug 'rking/ag.vim', { 'on': 'Ag' }
 Plug 'scrooloose/nerdcommenter'
+Plug 'sindrets/diffview.nvim'
 Plug 'szw/vim-maximizer'
 Plug 'tpope/vim-fugitive'
 Plug 'vifm/vifm.vim'
@@ -165,8 +167,6 @@ command! E Explore
 command! F GFiles
 command! P CocFix
 command! T :tab new term://$SHELL
-tnoremap <ESC><ESC> <ESC>
-tnoremap <C-[> <C-\><C-n>
 nmap <Leader>i <Plug>(Prettier)
 
 vnoremap J :m '>+1<CR>gv=gv
@@ -182,6 +182,7 @@ tnoremap <A-h> <C-\><C-N><C-w>h
 tnoremap <A-j> <C-\><C-N><C-w>j
 tnoremap <A-k> <C-\><C-N><C-w>k
 tnoremap <A-l> <C-\><C-N><C-w>l
+tnoremap <A-[> <C-\><C-N>
 inoremap <A-h> <C-\><C-N><C-w>h
 inoremap <A-j> <C-\><C-N><C-w>j
 inoremap <A-k> <C-\><C-N><C-w>k
@@ -211,6 +212,7 @@ nnoremap <leader>v :vsplit<CR>
 nnoremap <leader>t :tab split<bar> :E<CR>
 nnoremap <leader>s :tab split<CR>
 nnoremap <leader>o :MaximizerToggle<CR>
+nnoremap <leader>cf :let @+ = expand("%")<CR>
 
 nnoremap <leader>] :GitGutterNextHunk<CR>
 nnoremap <leader>[ :GitGutterPrevHunk<CR>
