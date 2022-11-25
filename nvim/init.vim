@@ -225,6 +225,9 @@ nnoremap <leader>b :Buffers<CR>
 " Apply AutoFix to problem on the current line.
 nnoremap <leader>pf  <Plug>(coc-fix-current)
 
+" Prettify file
+nnoremap <leader>pp :Buffers<CR>
+
 " COC
 
 " tab to expand snippet
