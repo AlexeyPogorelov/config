@@ -2,6 +2,7 @@ alias ls='ls --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias e='exit'
 
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
