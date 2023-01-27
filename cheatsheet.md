@@ -146,3 +146,6 @@ add user to group `adduser {{user}} {{group}}`
 ### fun
 watch star wars `telnet towel.blinkenlights.nl`
 
+## desktop
+add `%u` to the Exec for desktop file and `MimeType=x-scheme-handler/phrem;`
+
