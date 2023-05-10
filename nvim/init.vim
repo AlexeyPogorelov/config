@@ -141,6 +141,9 @@ set updatetime=100
 " FZF
 let g:fzf_layout = { 'window': { 'width': 0.95, 'height': 0.95 } }
 
+" Markdown Preview
+let vim_markdown_preview_toggle=1
+
 "key bindings
 let mapleader = " "
 
@@ -175,7 +178,7 @@ vmap <C-c> "+y<CR>
 vmap <C-x> "+d<CR>
 nmap <C-p> "+p<CR>
 nnoremap <C-s> :w<CR>
-inoremap <C-s> <Esc>:w<CR>a
+inoremap <C-s> <Esc>:w<CR>
 vnoremap <C-s> <Esc>:w<CR>
 
 tnoremap <A-h> <C-\><C-N><C-w>h
@@ -192,7 +195,7 @@ nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
 
-nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
+nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 70<CR>
 nnoremap <leader>u :UndotreeShow<CR>
 nnoremap <C-up> :resize +5<CR>
 nnoremap <C-down> :resize -5<CR>
@@ -224,11 +227,6 @@ nnoremap <leader>b :Buffers<CR>
 
 " Apply AutoFix to problem on the current line.
 nnoremap <leader>pf  <Plug>(coc-fix-current)
-
-" Prettify file
-nnoremap <leader>pp :Buffers<CR>
-
-" COC
 
 " tab to expand snippet
 inoremap <silent><expr> <TAB>
