@@ -44,6 +44,7 @@ run sh script for all files in the folder `find . -iname '*.mp4' -exec sh ~/.con
 or `for file in *.jpg; do ffmpeg -i "$file" -vf scale=iw*.5:-1 "${file%.jpg}"_out.jpg ; done`
 unzip gz `tar -xvzf {{file}}`
 rename files in folder `find . -iwholename "**/foldername/*.ext" -exec rename -v 's/\.oldext$/\.newext/i' {} \;`
+resize all files in folder `for i in $( ls *.png); do convert -resize 1316x1094 $i re_$i; done`
 
 ### curl
 help `curl cheat.sh`
@@ -103,6 +104,16 @@ run app as user to keep it after logout `systemd-run --scope --user tmux`
 reverse sshfs `ssh user@remote -R 5555:localhost:22 {&&} sshfs -o ssh_command="ssh -p 5555" user@localhost:/local/path/ /remote/path/`
 scan network for ssh `sudo nmap -p 22 192.168.0.0/24`
 
+### usbip
+bind device on server `usbip bind --busid {id}`
+run server `usbipd`
+connect device on client `usbip attach -r {ip} -b {id}`
+get usb devices names `lsusb`
+get list of available local devices `usbip list -l`
+fix on server `modprobe usbip_core && modprobe usbip_host`
+fix on client `modprobe vhci-hcd`
+
+
 ### SCP
 using port `scp -P 8022 username@host:{{input}} /directory`
 download `scp username@host:{{input}} /directory`
@@ -137,6 +148,7 @@ mount ram disk to the folder `mount -t tmpfs -o size=512m tmpfs /mnt/ramdisk`
 mount ssh to nautilus `gio mount ssh://{{user}}@{{domain}}:{{port}}`
 mount fat partition with all permissions `mount /dev/{{drive}} {{mountPoint}} -o umask=000`
 mount fat using options `mount -t vfat /dev/{{drive}} {{mountPoint}} -o rw,uid=xxx,gid=xxx`
+mount remote directory `sshfs {{user}}@{{domain}}:/home/user ./mount/`
 
 ### permissions
 create group `addgroup {{group}}`
