@@ -88,6 +88,7 @@ slowdown 4 times to target 30 fps `ffmpeg -i {{input}} -vf setpts=4*PTS -r 30 {{
 scale to ratio 2.4x1 `ffmpeg -i {{input}} -vf "scale=1920x800,setsar=1:1" {{output}}`
 half the size of the picture `ffmpeg -i {{input}} -vf "scale=iw*.5:ih*.5" {{output}}`
 join files `ffmpeg -f concat -safe 0 -i <(for f in ./*.mp4; do echo "file '$PWD/$f'"; done) -c copy {{output}}`
+get video info `ffprobe -select_streams v -show_streams {{file}}`
 
 ### show opened ports
 show all `sudo lsof -i`
@@ -155,9 +156,6 @@ create group `addgroup {{group}}`
 allow group `chmod 750 /usr/bin/{{bin}}`
 make own by group `chown root:{{group}} /usr/bin/{{bin}}`
 add user to group `adduser {{user}} {{group}}`
-
-### fun
-watch star wars `telnet towel.blinkenlights.nl`
 
 ## desktop
 add `%u` to the Exec for desktop file and `MimeType=x-scheme-handler/phrem;`
