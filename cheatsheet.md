@@ -1,5 +1,6 @@
 ### ISSUES
-restart pipewire `systemctl --user restart pipewire.service pipewire-pulse.socket`
+restart pipewire `systemctl --user restart pipewire.service pipewire-pulse.socket wireplumber`
+restart ALSA `sudo alsa force-reload`
 
 ### SYSTEM
 restart service `sudo systemctl restart {{service}}`
@@ -33,6 +34,7 @@ set default audio output `echo 'set-default-source bluez_sink.00_42_79_B5_9B_A8.
 use sink 1 as a default `pacmd set-default-sink 1`
 play sound inside terminal `ffplay -autoexit -nodisp {{file}}`
 run vst rack `pw-jack carla-rack`
+download sound from YouTube `yt-dlp -x --audio-format mp3 [YouTube_Video_URL]`
 
 ### FTP
 start ftp server `sudo service vsftpd start`
@@ -102,7 +104,7 @@ forward port `ssh -f -N -L 4000:localhost:4000 user@0.0.0.0`
 run app as user to keep it after logout `systemd-run --scope --user tmux`
 reverse sshfs `ssh user@remote -R 5555:localhost:22 {&&} sshfs -o ssh_command="ssh -p 5555" user@localhost:/local/path/ /remote/path/`
 scan network for ssh `sudo nmap -p 22 192.168.0.0/24`
-proxy `sshuttle --dns -r user@ip 0.0.0.0/0`
+proxy `sshuttle --dns -r user@ip:port 0.0.0.0/0`
 
 ### usbip
 bind device on server `usbip bind --busid {id}`
