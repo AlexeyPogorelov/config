@@ -164,3 +164,8 @@ add user to group `adduser {{user}} {{group}}`
 ## desktop
 add `%u` to the Exec for desktop file and `MimeType=x-scheme-handler/phrem;`
 
+### performance
+check CPU freq `cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor`
+set CPU to performance `echo -n performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor`
+set CPU to power save `echo -n powersave | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor`
+
