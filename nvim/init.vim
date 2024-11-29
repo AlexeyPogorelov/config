@@ -152,9 +152,10 @@ map <ScrollWheelUp> <C-Y>
 map <ScrollWheelDown> <C-E>
 
 " map <F1> :call Test()<CR>
-map <F1> :split term://$SHELL <BAR> startinsert<CR>
-map <F2> :mksession! ~/session.vim<CR>
-map <F2><F2> :source ~/session.vim<CR>
+" map <F1> :split term://$SHELL <BAR> startinsert<CR>
+map <F1> :mksession! ~/session.vim<CR>
+map <F1><F1> :source ~/session.vim<CR>
+map <F2> :CocCommand<CR>
 map <F3> :buffers<CR>:buffer<Space>
 map <F4> :set relativenumber!<CR>
 map <F5> :EditVifm %<CR>
@@ -166,6 +167,7 @@ map <F12> :tab new term://$SHELL <BAR> startinsert<CR>
 map <F29> :!nautilus % &<CR>
 map <F36> :split term://$SHELL <BAR> startinsert<CR>
 command! B Buffers
+command! C CocCommand
 command! E Explore
 command! F GFiles
 command! P CocFix
@@ -260,6 +262,10 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+
+" Copilot
+imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
+let g:copilot_no_tab_map = v:true
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
