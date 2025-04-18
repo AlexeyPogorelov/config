@@ -11,6 +11,7 @@ run app with the memory limit `systemd-run --scope -p MemoryMax=500M --user {{ap
 use old iris graphic driver `export MESA_LOADER_DRIVER_OVERRIDE=i965`
 mount sdcrd `sudo mount /dev/mmcblk0p1 /media/alex && sudo mount -o remount,rw /dev/mmcblk0p1 /media/alex`
 free disk space `df -BM`
+touchpad disable while typing `gsettings set org.gnome.desktop.peripherals.touchpad disable-while-typing false`
 
 ### WiFi
 turn on wifi `nmcli r wifi on`
@@ -77,6 +78,7 @@ convert to jpg and resize `mogrify -resize 650x365 -format jpg *.png`
 slice video to images `ffmpeg -i {{input}} -vsync 0 {{output}}-%d.png`
 merge video from images `ffmpeg -framerate 24 -pattern_type glob -i '*.png' -i {{input}}.wav -acodec aac -b:a 192k -shortest -c:v libx264 -r 24 -pix_fmt yuv420p {{output}}.mp4`
 convert wav to mp3 `ffmpeg -i {{input}}.wav -vn -ar 44100 -ac 2 -b:a 320k {{output}}.mp3`
+convert video to mp3 `for i in *.mp4; do ffmpeg -i "$i" "${i%.*}.mp3"; done`
 replace audio in video `ffmpeg -i {{input}}.mp4 -i {{input}}.wav -c:v copy -map 0:v:0 -map 1:a:0 -shortest {{output}}.mp4`
 split part of the video 1 `ffmpeg -ss 10 -t 40 -i {{input}} -vcodec copy -acodec copy {{output}}`
 split part of the video 2 `ffmpeg -i {{input}} -ss 00:00:02 -t 00:00:04 -async 1 {{output}}`
