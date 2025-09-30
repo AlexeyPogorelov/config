@@ -12,10 +12,12 @@ if [ "$CURRENT_GOVERNOR" = "performance" ]; then
   # If it's in performance mode, switch to powersave
   echo "Switching to powersave mode."
   echo -n "powersave" | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+  powerprofilesctl set power-saver
 else
   # Otherwise, switch to performance mode
   echo "Switching to performance mode."
   echo -n "performance" | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+  powerprofilesctl set performance
 fi
 
 # Confirm the new state by reading it again
