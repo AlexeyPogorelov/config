@@ -64,6 +64,7 @@ let g:coc_global_extensions = [
 \ ]
 
 call plug#begin('~/.vim/plugged')
+" Plug 'robitx/gp.nvim'
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/agit.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
@@ -74,7 +75,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'mbbill/undotree'
 Plug 'morhetz/gruvbox'
 Plug 'mxw/vim-jsx'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nvim-lua/plenary.nvim'
 Plug 'pangloss/vim-javascript'
 Plug 'peitalin/vim-jsx-typescript'
@@ -159,12 +160,12 @@ map <F2> :CocCommand<CR>
 map <F3> :buffers<CR>:buffer<Space>
 map <F4> :set relativenumber!<CR>
 map <F5> :EditVifm %<CR>
+map <F29> :!nautilus % &<CR>
 map <F6> :UndotreeToggle<CR>
 map <F7> :Gvdiffsplit<CR>
 map <F8> :Gvdiffsplit!<CR>
 map <F11> :call ToggleScheme()<CR>
 map <F12> :tab new term://$SHELL <BAR> startinsert<CR>
-map <F29> :!nautilus % &<CR>
 map <F36> :split term://$SHELL <BAR> startinsert<CR>
 command! B Buffers
 command! C CocCommand
@@ -266,6 +267,11 @@ nmap <silent> gr <Plug>(coc-references)
 " Copilot
 imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
 let g:copilot_no_tab_map = v:true
+" let g:ollama_model = 'deepseek-coder-v2:16b'
+" let g:ollama_host = 'http://127.0.0.1:11434'
+" require('nvim-llama').setup {
+" model = 'deepseek-coder-v2:16b',
+"}
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')

@@ -53,6 +53,7 @@ resize all files in folder `for i in $( ls *.png); do convert -resize 1316x1094 
 help `curl cheat.sh`
 my IP `curl ifconfig.co` or `curl wgetip.com`
 weather `curl wttr.in`
+crypto `curl rate.sx/btc`
 share file `curl --upload-file {{file}} https://transfer.sh/{{filename}}`
 generate QR code `curl qrenco.de/{{text}}`
 
