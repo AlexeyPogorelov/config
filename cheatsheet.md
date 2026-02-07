@@ -34,6 +34,7 @@ move input 5 to sink 1 `pacmd move-sink-input 5 1`
 set default audio output `echo 'set-default-source bluez_sink.00_42_79_B5_9B_A8.a2dp_sink.monitor' | pacmd`
 use sink 1 as a default `pacmd set-default-sink 1`
 play sound inside terminal `ffplay -autoexit -nodisp {{file}}`
+set latency for jack app `PIPEWIRE_LATENCY="256/48000" pw-jack bitwig-studio`
 run vst rack `pw-jack carla-rack`
 download sound from YouTube `yt-dlp -x --audio-format mp3 [YouTube_Video_URL]`
 
@@ -163,6 +164,8 @@ create group `addgroup {{group}}`
 allow group `chmod 750 /usr/bin/{{bin}}`
 make own by group `chown root:{{group}} /usr/bin/{{bin}}`
 add user to group `adduser {{user}} {{group}}`
+permission for current user `sudo setfacl -R -m u:$USER:rwx .`
+permission for future `sudo setfacl -R -d -m u:$USER:rwx .`
 
 ## desktop
 add `%u` to the Exec for desktop file and `MimeType=x-scheme-handler/phrem;`
